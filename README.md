@@ -3,12 +3,15 @@ A minimal and lightweight dashboard for your self-hosted services
 
 ![image](https://user-images.githubusercontent.com/5120628/199825180-c7130c78-2e36-475b-a2d7-7c04c71ed513.png)
 
-## Intro
-After trying out quite a few server dashboards and not quite finding the right one that:
-- was minimal and static enough to not consume much resources (both on server and client)
-- also informed me about the vitals and online status of my services
-
-.. I eventually created my own. It started as a hobby weekend project but I have been using it as my only dashboard for a couple months now, and am rather happy with it.
+## Features:
+- Extremely lightweight (loads instantly), and responsive (uses Bootstrap framework)
+- Shows Temperature, CPU load, Memory used by tapping into Glances API (default 5s updates)
+- Online check of services (checked only on page load/refresh to stay light on resources)
+- Themes
+- FontAwesome icons
+- Wallpaper backgrounds supported
+- Section/tile/widget can be quickly disabled without having to remove its data from settings (in case you might want to enable/use it later)
+- All settings in a single easy to edit json file
 
 ## Installation
 ### With Docker
