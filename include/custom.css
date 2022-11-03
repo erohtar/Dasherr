@@ -1,0 +1,29 @@
+body {
+	background-color: grey;
+	--bs-body-color: white;
+}
+
+.dot {
+	height: 10px;
+	width: 10px;
+	background-color: #808080;
+	border-radius: 50%;
+	display: inline-block;
+	margin-top: 12px;
+	margin-right: 5px;
+	float: right;
+}
+.dot-green {
+	background-color: #1de9b6;
+}
+.tile {
+	display: block;
+	text-align: left;
+	margin-bottom: 5px;
+	color: white;
+}
+
+#pageTitle {
+	margin-top: 50px;
+}
+

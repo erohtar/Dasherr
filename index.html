@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dashboard</title>
+    <link href="include/bootstrap.min.css" rel="stylesheet">
+    <script src="include/bootstrap.bundle.min.js"></script>
+	<script src="include/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    
+	<link href="include/custom.css" rel="stylesheet">
+	<script src="include/worker.js"></script>
+	<link rel="icon" href="res/favicon.svg" sizes="32x32" type="image/png">
+  </head>
+  <body>
+	<!-- Window Contents -->
+	<div class="container col-lg-12 col-xl-10" style="display:none">
+		
+		<!-- Dashboard Contents -->
+		<div id="tilesWidgets" class="row">
+			<h2 id="pageTitle"></h2>
+			<hr>
+		</div>
+		
+		
+		<!-- Widgets here -->
+		<div id="tilesWidgets" class="row">
+			<div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 gy-3 overflow-hidden mb-5">
+				<div class="widget text-start">
+					<div class="row">
+						<span class="col"><i class="fa fa-microchip"></i></span>
+						<span class="col" id="cpuPrct"></span>
+					</div>
+					<div class="row">
+						<span class="col"><i class="fa fa-memory"></i></span>
+						<span class="col" id="memPrct"></span>
+					</div>
+					<div class="row">
+						<span class="col"><i class="fa fa-temperature-low"></i></span>
+						<span class="col" id="cpuTemp"></span>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+		
+		<!-- Section/Tiles get added here -->
+		<div id="tilesServices" class="row row-cols-sm-1 row-cols-md-2 row-cols-lg-4 gy-5 overflow-hidden">
+		</div>
+			
+		<!-- End Dashboard Contents -->
+	</div>
+
+
+	<!-- End Window Contents -->
+  </body>
+</html>

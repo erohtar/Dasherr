@@ -1,0 +1,246 @@
+{
+	"page": {
+		"title": "HomeServer",
+		"theme": "Onedark"
+	},
+	"widgets": {
+		"glances": {
+			"disable": 0,
+			"url": "http://100.100.100.100:61208/",
+			"refreshMs": 5000
+		}
+	},
+	"sections": [
+		{
+			"name": "Monitor",
+			"disable": 0,
+			"tiles": [
+				{
+					"name": "Glances",
+					"url": "http://100.100.100.100:61208/",
+					"faIcon": "fa fa-microchip"
+				},
+				{
+					"name": "Healthchecks",
+					"url": "https://healthchecks.io/projects/2044590e-ff23-4b47-af2d-392fc758fe5a/checks/",
+					"faIcon": "fa fa-heart-pulse"
+				},
+				{
+					"name": "UptimeKuma:rPi",
+					"url": "http://100.100.100.100:3001/",
+					"faIcon": "fa fa-wave-square"
+				},
+				{
+					"name": "UptimeKuma:AWS",
+					"url": "http://100.100.100.103:3001/",
+					"faIcon": "fa fa-wave-square"
+				},
+				{
+					"name": "Dozzle",
+					"url": "http://100.100.100.100:9999/",
+					"faIcon": "fa fa-bars"
+				},
+				{
+					"name": "Scrutiny",
+					"url": "http://100.100.100.100:8030/",
+					"faIcon": "fa fa-hard-drive"
+				}
+			]
+		},
+		{
+			"name": "Maintenance",
+			"disable": 0,
+			"tiles": [
+				{
+					"name": "Portainer",
+					"url": "http://100.100.100.100:9000/",
+					"faIcon": "fab fa-docker"
+				},
+				{
+					"name": "FileBrowser",
+					"url": "http://100.100.100.100:8020/",
+					"faIcon": "fa fa-folder-tree"
+				},
+				{
+					"name": "ZeroTier",
+					"url": "https://my.zerotier.com/",
+					"faIcon": "fa fa-network-wired"
+				},
+				{
+					"name": "Router",
+					"url": "http://192.168.29.1/",
+					"faIcon": "fa fa-network-wired"
+				}
+			]
+		},
+		{
+			"name": "Media",
+			"disable": 0,
+			"tiles": [
+				{
+					"name": "JellyFin",
+					"url": "http://100.100.100.100:8096/",
+					"faIcon": "fa fa-clapperboard"
+				},
+				{
+					"name": "Radarr",
+					"url": "http://100.100.100.100:7878/",
+					"faIcon": "fa fa-video"
+				},
+				{
+					"name": "Sonarr",
+					"url": "http://100.100.100.100:8989/",
+					"faIcon": "fa fa-tv"
+				},
+				{
+					"name": "Readarr",
+					"url": "http://100.100.100.100:8787/",
+					"faIcon": "fa fa-book"
+				},
+				{
+					"name": "Bazarr",
+					"url": "http://100.100.100.100:6767/",
+					"faIcon": "fa fa-closed-captioning"
+				}
+			]
+		},
+		{
+			"name": "VPN",
+			"disable": 0,
+			"tiles": [
+				{
+					"name": "qBittorrent",
+					"url": "http://100.100.100.100:8080/",
+					"faIcon": "fa fa-skull-crossbones"
+				},
+				{
+					"name": "Prowlarr",
+					"url": "http://100.100.100.100:9696/",
+					"faIcon": "fa fa-spider"
+				}
+			]
+		}
+	],
+	"themes": {
+		"Blackboard": {
+			"background": "",
+			"colorBg": "#1a1a1a",
+			"colorPr": "#fffdea",
+			"colorSc": "#5c5c5c",
+			"colorOn": "#1de9b6",
+			"colorOf": "#808080"
+		},
+		"Espresso": {
+			"background": "",
+			"colorBg": "#21211f",
+			"colorPr": "#d1b59a",
+			"colorSc": "#4e4e4e",
+			"colorOn": "#1de9b6",
+			"colorOf": "#808080"
+		},
+		"Cab": {
+			"background": "",
+			"colorBg": "#f6d305",
+			"colorPr": "#1f1f1f",
+			"colorSc": "#424242",
+			"colorOn": "#1de9b6",
+			"colorOf": "#808080"
+		},
+		"Cloud": {
+			"background": "",
+			"colorBg": "#f1f2f0",
+			"colorPr": "#35342f",
+			"colorSc": "#37bbe4",
+			"colorOn": "#1de9b6",
+			"colorOf": "#808080"
+		},
+		"Lime": {
+			"background": "",
+			"colorBg": "#263238",
+			"colorPr": "#aabbc3",
+			"colorSc": "#aeea00",
+			"colorOn": "#1de9b6",
+			"colorOf": "#808080"
+		},
+		"White": {
+			"background": "",
+			"colorBg": "#ffffff",
+			"colorPr": "#222222",
+			"colorSc": "#dddddd",
+			"colorOn": "#1de9b6",
+			"colorOf": "#808080"
+		},
+		"Tron": {
+			"background": "",
+			"colorBg": "#242b33",
+			"colorPr": "#effbff",
+			"colorSc": "#6ee2ff",
+			"colorOn": "#1de9b6",
+			"colorOf": "#808080"
+		},
+		"Blues": {
+			"background": "",
+			"colorBg": "#2b2c56",
+			"colorPr": "#eff1fc",
+			"colorSc": "#6677eb",
+			"colorOn": "#1de9b6",
+			"colorOf": "#808080"
+		},
+		"Passion": {
+			"background": "",
+			"colorBg": "#f5f5f5",
+			"colorPr": "#12005e",
+			"colorSc": "#8e24aa",
+			"colorOn": "#1de9b6",
+			"colorOf": "#808080"
+		},
+		"Chalk": {
+			"background": "",
+			"colorBg": "#263238",
+			"colorPr": "#aabbc3",
+			"colorSc": "#ff869a",
+			"colorOn": "#1de9b6",
+			"colorOf": "#808080"
+		},
+		"Paper": {
+			"background": "",
+			"colorBg": "#f8f6f1",
+			"colorPr": "#4c432e",
+			"colorSc": "#aa9a73",
+			"colorOn": "#1de9b6",
+			"colorOf": "#808080"
+		},
+		"Neon": {
+			"background": "",
+			"colorBg": "#091833",
+			"colorPr": "#effbff",
+			"colorSc": "#ea00d9",
+			"colorOn": "#1de9b6",
+			"colorOf": "#808080"
+		},
+		"Pumpkin": {
+			"background": "",
+			"colorBg": "#2d3436",
+			"colorPr": "#effbff",
+			"colorSc": "#ffa500",
+			"colorOn": "#1de9b6",
+			"colorOf": "#808080"
+		},
+		"Onedark": {
+			"background": "",
+			"colorBg": "#282c34",
+			"colorPr": "#dfd9d6",
+			"colorSc": "#98c379",
+			"colorOn": "#98c379",
+			"colorOf": "#282c34"
+		},
+		"Mint": {
+			"background": "",
+			"colorBg": "#282525",
+			"colorPr": "#d9d9d9",
+			"colorSc": "#50fbc2",
+			"colorOn": "#1de9b6",
+			"colorOf": "#808080"
+		}
+	}
+}
