@@ -42,6 +42,7 @@ services:
 - If all went well, Dasherr will be running on port 80/443 of your server
 
 ## Configuration
+A sample settings.json is included in the release. It should be used as a template to edit/add your own Sections and Tiles (services). All the configuration settings are explained below.
 
 ### 'Page' 
 The 'page' settings allow you to define some top-level settings:
