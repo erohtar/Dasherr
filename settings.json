@@ -20,24 +20,9 @@
 					"faIcon": "fa fa-microchip"
 				},
 				{
-					"name": "Healthchecks",
-					"url": "https://healthchecks.io/projects/2044590e-ff23-4b47-af2d-392fc758fe5a/checks/",
-					"faIcon": "fa fa-heart-pulse"
-				},
-				{
 					"name": "UptimeKuma",
 					"url": "http://homeserver:3001/",
 					"faIcon": "fa fa-wave-square"
-				},
-				{
-					"name": "Scrutiny",
-					"url": "http://homeserver:8030/",
-					"faIcon": "fa fa-hard-drive"
-				},
-				{
-					"name": "Dozzle",
-					"url": "http://homeserver:9999/",
-					"faIcon": "fa fa-bars"
 				}
 			]
 		},
@@ -73,16 +58,6 @@
 					"name": "Sonarr",
 					"url": "http://homeserver:8989/",
 					"faIcon": "fa fa-tv"
-				},
-				{
-					"name": "Readarr",
-					"url": "http://homeserver:8787/",
-					"faIcon": "fa fa-book"
-				},
-				{
-					"name": "Bazarr",
-					"url": "http://homeserver:6767/",
-					"faIcon": "fa fa-closed-captioning"
 				}
 			]
 		},
@@ -98,67 +73,6 @@
 					"name": "Syncthing",
 					"url": "http://homeserver:8384/",
 					"faIcon": "fa fa-rotate"
-				}
-			]
-		},
-		{
-			"name": "Network",
-			"tiles": [
-				{
-					"name": "Tailscale",
-					"url": "https://login.tailscale.com/admin/machines",
-					"faIcon": "fa fa-network-wired"
-				},
-				{
-					"name": "Router",
-					"url": "http://192.168.29.1/",
-					"faIcon": "fa fa-network-wired"
-					"disableCheck": 1,
-				}
-			]
-		},
-		{
-			"name": "VPN",
-			"tiles": [
-				{
-					"name": "qBittorrent",
-					"url": "http://homeserver:8080/",
-					"faIcon": "fa fa-skull-crossbones"
-				},
-				{
-					"name": "Prowlarr",
-					"url": "http://homeserver:9696/",
-					"faIcon": "fa fa-spider"
-				}
-			]
-		},
-		{
-			"disable": 1,
-			"name": "Database",
-			"tiles": [
-				{
-					"name": "CouchDB",
-					"url": "http://homeserver:5984",
-					"faIcon": "fa-solid fa-database"
-				}			]
-		},
-		{
-			"name": "AWS",
-			"tiles": [
-				{
-					"name": "Portainer",
-					"url": "http://aws:9000/",
-					"faIcon": "fab fa-docker"
-				},
-				{
-					"name": "FileBrowser",
-					"url": "http://aws:8020/",
-					"faIcon": "fa fa-folder-tree"
-				},
-				{
-					"name": "UptimeKuma",
-					"url": "http://aws:3001/",
-					"faIcon": "fa fa-wave-square"
 				}
 			]
 		}
@@ -274,7 +188,7 @@
 			"colorPr": "#dfd9d6",
 			"colorSc": "#98c379",
 			"colorOn": "#98c379",
-			"colorOf": "#282c34"
+			"colorOf": "#808080"
 		},
 		"Mint": {
 			"background": "",
