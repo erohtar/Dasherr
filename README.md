@@ -45,12 +45,9 @@ services:
 
 ### 'Page' 
 The 'page' settings allow you to define some top-level settings:
-
-`title` - Title of your dashboard
-
-`theme` - Name of any theme of your choice from the themes defined in the Themes section
-
-`openTab` - When you click on a service tile, this setting decides whether it's opened in a new tab or the same tab (possible values `new` and `same`)
+- `title` - Title of your dashboard
+- `theme` - Name of any theme of your choice from the themes defined in the Themes section
+- `openTab` - When you click on a service tile, this setting decides whether it's opened in a new tab or the same tab (possible values `new` and `same`)
 
 Sample:
 ```
@@ -65,10 +62,8 @@ Sample:
 There's only one widget currently supported - Glances. That's not because of my laziness (even though I don't deny that trait), but to keep with the minimal design and stay light on resources.
 
 Configurable settings:
-
-`url` - Self-explanatory
-
-`refreshMs` - How many ms to wait before updating (default is 5000ms or 5 seconds)
+- `url` - Self-explanatory
+- `refreshMs` - How many ms to wait before updating (default is 5000ms or 5 seconds)
 
 Sample:
 ```
@@ -84,44 +79,30 @@ Sample:
 This is an array of any number of individual Sections in your dashboard.
 
 Configurable settings:
-
-`name` - Self-explanatory
-
-`tiles` - See below
-
-`disable` - (Optional) If set to `1`, this Section will not be shown
+- `name` - Self-explanatory
+- `tiles` - See below
+- `disable` - (Optional) If set to `1`, this Section will not be shown
 
 ### 'Tiles'
 This is an array of any number of individual Tiles (services) in a section.
 
 Configurable settings:
-
-`name` - Self-explanatory
-
-`url` - Self-explanatory
-
-`faIcon` - The id of the FontAwesome icon you'd like to show for this service
-
-`disable` - (Optional) If set to `1`, this Tile will not be shown
-
-`disableCheck` - (Optional) If set to `1`, the online check will not be performed for this Tile
+- `name` - Self-explanatory
+- `url` - Self-explanatory
+- `faIcon` - The id of the FontAwesome icon you'd like to show for this service
+- `disable` - (Optional) If set to `1`, this Tile will not be shown
+- `disableCheck` - (Optional) If set to `1`, the online check will not be performed for this Tile
 
 ### 'Themes'
 Dasherr comes with several built-in themes, and you can easily add your own by copying any existing theme in settings file and making edits to the hex color values and/or background.
 
-The various supported settings per theme are:
-
-`background` - This could be a local or web wallpaper background
-
-`colorBg` - This is the background color of the page (only used if `background` is not set)
-
-`colorPr` - This is the primary text color of the page
-
-`colorSc` - This is the secondary text color of the page
-
-`colorOn` - This is the color of the service **enabled** 'dot'
-
-`colorOf` - This is the color of the service **disabled** 'dot'
+Configurable settings:
+- `background` - This could be a local or web wallpaper background
+- `colorBg` - This is the background color of the page (only used if `background` is not set)
+- `colorPr` - This is the primary text color of the page
+- `colorSc` - This is the secondary text color of the page
+- `colorOn` - This is the color of the service **enabled** 'dot'
+- `colorOf` - This is the color of the service **disabled** 'dot'
 
 Sample:
 ```
