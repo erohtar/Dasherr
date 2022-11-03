@@ -5,11 +5,11 @@ A minimal and lightweight dashboard for your self-hosted services
 
 ## Features:
 - Extremely lightweight (loads instantly), and responsive (uses Bootstrap framework)
-- Shows Temperature, CPU load, Memory used by tapping into Glances API (default 5s updates)
+- Shows Temperature, CPU load and Memory used by tapping into Glances API (default 5s updates)
 - Online check of services (checked only on page load/refresh to stay light on resources)
 - Themes
 - FontAwesome icons
-- Wallpaper backgrounds supported
+- Wallpaper backgrounds
 - Section/tile/widget can be quickly disabled without having to remove its data from settings (in case you might want to enable/use it later)
 - All settings in a single easy to edit json file
 
@@ -139,6 +139,6 @@ Sample:
 ``` 
 
 ## Credits
-- Heimdall : The first dashboard I used. I loved the live tiles and made quite a few new ones for the services that weren't supported out of the box. But since development had stopped long ago, and it was heavy on my server's resources (quite likely because I enabled so many live tiles), I stopped using it
-- Flame : Very well made dashboard, and if it wasn't 100% static, I'd have maybe chosen this. I directly lifted the theme names and color swatches from Flame because they looked gorgeous to me, and for that I'm very grateful
-- Dashy : Extremely flexible and beautifully made dashboard - the dev definitely is gifted. The inspiration to use online 'dots' came from here. I might have stayed with Dashy, but (at least at the time when I tried it) it took 1+ mins to compile and reload every time I made a little configuration change, so I had to start looking elsewhere
+- Flame : Very well made and clean looking dashboard. I took the theme names and color swatches from Flame because they looked gorgeous to me, and for that I'm very grateful
+- Dashy : Extremely flexible and beautifully made dashboard - the dev definitely is gifted. The inspiration to use online 'dots' came from here
+- r/selfhosted : I got interested into self-hosting towards the end of 2021, and since then I've learnt a lot from this subreddit
