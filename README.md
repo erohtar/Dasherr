@@ -5,14 +5,13 @@ A minimal and lightweight dashboard for your self-hosted services
 After trying out quite a few server dashboards and not quite finding the right one that:
 - was minimal and static enough to not consume much resources (both on server and client)
 - also informed me about the vitals and online status of my services
-.. I eventually created my own. 
 
-It started as a hobby weekend project but I have been using it as my only dashboard for a couple months now, and am rather happy with it.
+.. I eventually created my own. It started as a hobby weekend project but I have been using it as my only dashboard for a couple months now, and am rather happy with it.
 
 ## Installation
 ### With Docker
-- Install a webserver Docker image (I use and recommend [this one](https://hub.docker.com/r/linuxserver/nginx))
-- Here's a sample Docker configuration for the above image
+- Install any webserver Docker container (I myself use and recommend [this one](https://hub.docker.com/r/linuxserver/nginx))
+- Here's a sample Docker configuration for the above container
 ```
 version: "2.1"
 services:
@@ -41,8 +40,11 @@ services:
 
 ### 'Page' 
 The 'page' settings allow you to define some top-level settings:
+
 `title` - Title of your dashboard
+
 `theme` - Name of any theme of your choice from the themes defined in the Themes section
+
 `openTab` - When you click on a service tile, this setting decides whether it's opened in a new tab or the same tab (possible values `new` and `same`)
 
 Sample:
@@ -56,9 +58,13 @@ Sample:
 
 ### 'Widgets'
 There's only one widget currently supported - Glances. That's not because of my laziness (even though I don't deny that trait), but to keep with the minimal design and stay light on resources.
+
 Configurable settings:
+
 `url` - Self-explanatory
+
 `refreshMs` - How many ms to wait before updating (default is 5000ms or 5 seconds)
+
 Sample:
 ```
 "widgets": {
@@ -71,29 +77,45 @@ Sample:
 
 ### 'Sections'
 This is an array of any number of individual Sections in your dashboard.
+
 Configurable settings:
+
 `name` - Self-explanatory
+
 `tiles` - See below
+
 `disable` - (Optional) If set to `1`, this Section will not be shown
 
 ### 'Tiles'
 This is an array of any number of individual Tiles (services) in a section.
+
 Configurable settings:
+
 `name` - Self-explanatory
+
 `url` - Self-explanatory
+
 `faIcon` - The id of the FontAwesome icon you'd like to show for this service
+
 `disable` - (Optional) If set to `1`, this Tile will not be shown
+
 `disableCheck` - (Optional) If set to `1`, the online check will not be performed for this Tile
 
 ### 'Themes'
 Dasherr comes with several built-in themes, and you can easily add your own by copying any existing theme in settings file and making edits to the hex color values and/or background.
 
 The various supported settings per theme are:
+
 `background` - This could be a local or web wallpaper background
+
 `colorBg` - This is the background color of the page (only used if `background` is not set)
+
 `colorPr` - This is the primary text color of the page
+
 `colorSc` - This is the secondary text color of the page
+
 `colorOn` - This is the color of the service **enabled** 'dot'
+
 `colorOf` - This is the color of the service **disabled** 'dot'
 
 Sample:
