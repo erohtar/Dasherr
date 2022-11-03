@@ -139,6 +139,6 @@ Sample:
 ``` 
 
 ## Credits
-- Flame : Very well made and clean looking dashboard. I took the theme names and color swatches from Flame because they looked gorgeous to me, and for that I'm very grateful
-- Dashy : Extremely flexible and beautifully made dashboard - the dev definitely is gifted. The inspiration to use online 'dots' came from here
-- r/selfhosted : I got interested into self-hosting towards the end of 2021, and since then I've learnt a lot from this subreddit
+- [Flame](https://github.com/jordanm88/flame-dashboard) : Very well made and clean looking static dashboard. I took the theme names and color swatches from Flame because they looked gorgeous to me, and for that I'm very grateful
+- [Dashy](https://github.com/lissy93/dashy) : Extremely flexible and beautifully made dashboard - the dev definitely is gifted. The inspiration to use online 'dots' came from here
+- [r/selfhosted](https://www.reddit.com/r/selfhosted/) : I got interested into self-hosting towards the end of 2021, and since then I've learnt a lot from this subreddit
