@@ -1,72 +1,138 @@
 {
 	"page": {
-		"title": "HomeServer",
-		"theme": "Onedark"
+		"title": "homeServer",
+		"theme": "Onedark",
+		"openTab": "new"
 	},
 	"widgets": {
 		"glances": {
 			"disable": 0,
-			"url": "http://100.100.100.100:61208/",
+			"url": "http://homeserver:61208/",
 			"refreshMs": 5000
 		}
 	},
 	"sections": [
 		{
-			"name": "Monitor",
 			"disable": 0,
+			"name": "Monitor",
 			"tiles": [
 				{
+        			"disable": 0,
 					"name": "Glances",
-					"url": "http://100.100.100.100:61208/",
+					"url": "http://homeserver:61208/",
 					"faIcon": "fa fa-microchip"
 				},
 				{
+        			"disable": 0,
 					"name": "Healthchecks",
 					"url": "https://healthchecks.io/projects/2044590e-ff23-4b47-af2d-392fc758fe5a/checks/",
 					"faIcon": "fa fa-heart-pulse"
 				},
 				{
-					"name": "UptimeKuma:rPi",
-					"url": "http://100.100.100.100:3001/",
+        			"disable": 0,
+					"name": "UptimeKuma",
+					"url": "http://homeserver:3001/",
 					"faIcon": "fa fa-wave-square"
 				},
 				{
-					"name": "UptimeKuma:AWS",
-					"url": "http://100.100.100.103:3001/",
-					"faIcon": "fa fa-wave-square"
-				},
-				{
-					"name": "Dozzle",
-					"url": "http://100.100.100.100:9999/",
-					"faIcon": "fa fa-bars"
-				},
-				{
+        			"disable": 0,
 					"name": "Scrutiny",
-					"url": "http://100.100.100.100:8030/",
+					"url": "http://homeserver:8030/",
 					"faIcon": "fa fa-hard-drive"
+				},
+				{
+        			"disable": 0,
+					"name": "Dozzle",
+					"url": "http://homeserver:9999/",
+					"faIcon": "fa fa-bars"
 				}
 			]
 		},
 		{
-			"name": "Maintenance",
 			"disable": 0,
+			"name": "Maintenance",
 			"tiles": [
 				{
+        			"disable": 0,
 					"name": "Portainer",
-					"url": "http://100.100.100.100:9000/",
+					"url": "http://homeserver:9000/",
 					"faIcon": "fab fa-docker"
 				},
 				{
+        			"disable": 0,
 					"name": "FileBrowser",
-					"url": "http://100.100.100.100:8020/",
+					"url": "http://homeserver:8020/",
 					"faIcon": "fa fa-folder-tree"
+				}
+			]
+		},
+		{
+			"disable": 0,
+			"name": "Media",
+			"tiles": [
+				{
+        			"disable": 0,
+					"name": "JellyFin",
+					"url": "http://homeserver:8096/",
+					"faIcon": "fa fa-video"
 				},
 				{
-					"name": "ZeroTier",
-					"url": "https://my.zerotier.com/",
+        			"disable": 0,
+					"name": "Radarr",
+					"url": "http://homeserver:7878/",
+					"faIcon": "fa fa-clapperboard"
+				},
+				{
+        			"disable": 0,
+					"name": "Sonarr",
+					"url": "http://homeserver:8989/",
+					"faIcon": "fa fa-tv"
+				},
+				{
+        			"disable": 0,
+					"name": "Readarr",
+					"url": "http://homeserver:8787/",
+					"faIcon": "fa fa-book"
+				},
+				{
+        			"disable": 0,
+					"name": "Bazarr",
+					"url": "http://homeserver:6767/",
+					"faIcon": "fa fa-closed-captioning"
+				}
+			]
+		},
+		{
+			"disable": 0,
+			"name": "Services",
+			"tiles": [
+				{
+        			"disable": 0,
+					"name": "ChangeDetection",
+					"url": "http://homeserver:5000/",
+					"faIcon": "fa fa-bell"
+				},
+				{
+        			"disable": 0,
+					"name": "Syncthing",
+					"url": "http://homeserver:8384/",
+					"faIcon": "fa fa-rotate"
+				}
+			]
+		},
+		{
+			"disable": 0,
+			"name": "Network",
+			"tiles": [
+				{
+        			"disable": 0,
+					"name": "Tailscale",
+					"url": "https://login.tailscale.com/admin/machines",
 					"faIcon": "fa fa-network-wired"
 				},
 				{
+        			"disable": 0,
+        			"disableCheck": 1,
 					"name": "Router",
 					"url": "http://192.168.29.1/",
 					"faIcon": "fa fa-network-wired"
@@ -74,49 +140,55 @@
 			]
 		},
 		{
-			"name": "Media",
 			"disable": 0,
+			"name": "VPN",
 			"tiles": [
 				{
-					"name": "JellyFin",
-					"url": "http://100.100.100.100:8096/",
-					"faIcon": "fa fa-clapperboard"
+        			"disable": 0,
+					"name": "qBittorrent",
+					"url": "http://homeserver:8080/",
+					"faIcon": "fa fa-skull-crossbones"
 				},
 				{
-					"name": "Radarr",
-					"url": "http://100.100.100.100:7878/",
-					"faIcon": "fa fa-video"
-				},
-				{
-					"name": "Sonarr",
-					"url": "http://100.100.100.100:8989/",
-					"faIcon": "fa fa-tv"
-				},
-				{
-					"name": "Readarr",
-					"url": "http://100.100.100.100:8787/",
-					"faIcon": "fa fa-book"
-				},
-				{
-					"name": "Bazarr",
-					"url": "http://100.100.100.100:6767/",
-					"faIcon": "fa fa-closed-captioning"
+        			"disable": 0,
+					"name": "Prowlarr",
+					"url": "http://homeserver:9696/",
+					"faIcon": "fa fa-spider"
 				}
 			]
 		},
 		{
-			"name": "VPN",
-			"disable": 0,
+			"disable": 1,
+			"name": "Database",
 			"tiles": [
 				{
-					"name": "qBittorrent",
-					"url": "http://100.100.100.100:8080/",
-					"faIcon": "fa fa-skull-crossbones"
+        			"disable": 0,
+					"name": "CouchDB",
+					"url": "http://homeserver:5984",
+					"faIcon": "fa-solid fa-database"
+				}			]
+		},
+		{
+			"disable": 0,
+			"name": "AWS",
+			"tiles": [
+				{
+        			"disable": 0,
+					"name": "Portainer",
+					"url": "http://aws:9000/",
+					"faIcon": "fab fa-docker"
 				},
 				{
-					"name": "Prowlarr",
-					"url": "http://100.100.100.100:9696/",
-					"faIcon": "fa fa-spider"
+        			"disable": 0,
+					"name": "FileBrowser",
+					"url": "http://aws:8020/",
+					"faIcon": "fa fa-folder-tree"
+				},
+				{
+        			"disable": 0,
+					"name": "UptimeKuma",
+					"url": "http://aws:3001/",
+					"faIcon": "fa fa-wave-square"
 				}
 			]
 		}
@@ -191,19 +263,19 @@
 			"colorBg": "#f5f5f5",
 			"colorPr": "#12005e",
 			"colorSc": "#8e24aa",
-			"colorOn": "#1de9b6",
-			"colorOf": "#808080"
+			"colorOn": "#8e24aa",
+			"colorOf": "#f5f5f5"
 		},
 		"Chalk": {
 			"background": "",
 			"colorBg": "#263238",
 			"colorPr": "#aabbc3",
 			"colorSc": "#ff869a",
-			"colorOn": "#1de9b6",
-			"colorOf": "#808080"
+			"colorOn": "#ff869a",
+			"colorOf": "#263238"
 		},
 		"Paper": {
-			"background": "",
+			"background": "res/bgLight.jpg",
 			"colorBg": "#f8f6f1",
 			"colorPr": "#4c432e",
 			"colorSc": "#aa9a73",

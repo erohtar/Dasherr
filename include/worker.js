@@ -1,11 +1,10 @@
 //globals
 var gSettings = JSON.parse(fileReader("settings.json"));
-var currTheme = gSettings.page.theme;
+var currTheme = gSettings.themes[gSettings.page.theme];
 
 //setup widget auto-refresh
 setInterval(glances, gSettings.widgets.glances.refreshMs);
 
-//start on load and then regularly refresh
 window.onload = function() {
 	//show page here for debugging
 	//document.getElementsByClassName("container")[0].style = "display:block;";
@@ -14,27 +13,42 @@ window.onload = function() {
 	document.title = gSettings.page.title;
 	document.getElementById("pageTitle").innerHTML = gSettings.page.title;
 	
-	//refresh widgets on page load
+	//load widgets
 	if(gSettings.widgets.glances.url != "") {
 		glances();
-	};
+	}
 	
+	//create sections+tiles for services
 	createSections();
+
+	//apply theme now
 	applyTheme();
 	
 	//show page now after creating elements
 	document.getElementsByClassName("container")[0].style = "display:block;";
-	//return;
+	
 
 	//check online status of all tiles
 	for (var n1 = 0; n1 < gSettings.sections.length; n1++) {
 		if (gSettings.sections[n1].disable) {
 			//allows quickly disabling a section
-			continue
-		};
+			continue;
+		}
+		
 		for (var n2 = 0; n2 < gSettings.sections[n1].tiles.length; n2++) {
+    		if (gSettings.sections[n1].tiles[n2].disable) {
+    			//allows quickly disabling a tile
+    			continue;
+    		}
+			
 			var thisUrl = gSettings.sections[n1].tiles[n2].url;
-			var thisDot = document.getElementById("dot" + gSettings.sections[n1].tiles[n2].name)
+			var thisDot = document.getElementById("dot" + gSettings.sections[n1].name + gSettings.sections[n1].tiles[n2].name)
+			
+    		if (gSettings.sections[n1].tiles[n2].disableCheck) {
+    			//allows quickly disabling a tile online check
+    			thisDot.remove();
+    			continue;
+    		}
 			
 			checkOnline(thisUrl, thisDot)
 		}
@@ -73,9 +87,11 @@ function createSections() {
 	for (var n1 = 0; n1 < gSettings.sections.length; n1++) {
 		if (gSettings.sections[n1].disable) {
 			//allows quickly disabling a section
-			continue
-		};
+			continue;
+		}
 		
+		var thisSec = gSettings.sections[n1].name;
+
 		var secDiv = document.createElement("div");
 		
 		secDiv.classList.add("col");
@@ -86,14 +102,20 @@ function createSections() {
 		var secTitle = document.createElement("div");
 		
 		secTitle.classList.add("h6");
-		secTitle.innerHTML = gSettings.sections[n1].name + "<hr>";
+		secTitle.innerHTML = thisSec + "<hr>";
 		
 		secDiv.appendChild(secTitle);
 		
 		for (var n2 = 0; n2 < gSettings.sections[n1].tiles.length; n2++) {
+    		if (gSettings.sections[n1].tiles[n2].disable) {
+    			//allows quickly disabling a tile
+    			continue;
+    		}
+            var thisTile = gSettings.sections[n1].tiles[n2].name;
+
 			//add indicator dot
 			var tileDot = document.createElement("span");
-			tileDot.id = "dot" + gSettings.sections[n1].tiles[n2].name;
+			tileDot.id = "dot" + thisSec + thisTile;
 			tileDot.classList.add("dot");
 			
 			secDiv.appendChild(tileDot);
@@ -101,39 +123,43 @@ function createSections() {
 			
 			//add link to tile
 			var tileLink = document.createElement("a");
-			tileLink.id = "tile" + gSettings.sections[n1].tiles[n2].name;
+			tileLink.id = "tile" + thisSec + thisTile;
 			tileLink.href = gSettings.sections[n1].tiles[n2].url;
+			if (gSettings.openTab = "new") {
+				tileLink.target = "_blank";
+			}
 			
 			tileLink.classList.add("tile");
 			tileLink.classList.add("btn");
+			tileLink.classList.add("overflow-hidden");
 
 			secDiv.appendChild(tileLink);
 			
 			//add fontawesome icon to tile
 			if (gSettings.sections[n1].tiles[n2].faIcon != "") {
 				var tileIcon = document.createElement("i");
-				tileIcon.id = "icon" + gSettings.sections[n1].tiles[n2].name;
+				tileIcon.id = "icon" + thisSec + thisTile;
 				tileIcon.className = gSettings.sections[n1].tiles[n2].faIcon;
 				tileIcon.style = "margin-right: 5px;";
 				
 				tileLink.appendChild(tileIcon);
 			}
-			tileLink.innerHTML = tileLink.innerHTML + gSettings.sections[n1].tiles[n2].name;
+			tileLink.innerHTML = tileLink.innerHTML + thisTile;
 		}
 	}
 }
 
 function applyTheme() {
-	//all theming done here except 'green' indicator of services, which needs to be done right after online check applies the updated class to it
+	//all theming done here except 'green' indicator of services, which needs to be done right after online check applies the updated class to them
 
-	if (gSettings.themes[gSettings.page.theme].background) {
-		$('body').css("background-image", "url('" + gSettings.themes[gSettings.page.theme].background +"')");
+	if (currTheme.background) {
+		$('body').css("background-image", "url('" + currTheme.background +"')");
 	}
-	$('body').css("--bs-body-color", gSettings.themes[gSettings.page.theme].colorSc);
-	$('body').css("background-color", gSettings.themes[gSettings.page.theme].colorBg);
-	$('.dot').css("background-color", gSettings.themes[gSettings.page.theme].colorOf);
-	$('.tile').css("color", gSettings.themes[gSettings.page.theme].colorPr);
-	$('.widget').css("color", gSettings.themes[gSettings.page.theme].colorPr);
+	$('body').css("--bs-body-color", currTheme.colorSc);
+	$('body').css("background-color", currTheme.colorBg);
+	$('.dot').css("background-color", currTheme.colorOf);
+	$('.tile').css("color", currTheme.colorPr);
+	$('.widget').css("color", currTheme.colorPr);
 }
 
 async function checkOnline(thisUrl, thisId) {
@@ -148,7 +174,7 @@ async function checkOnline(thisUrl, thisId) {
 		thisId.className = thisId.className.replace(/dot(?!\S)/g, "dot dot-green");
 		
 		//this theming needs to be done here because js can't change style of future elements of a class
-		$('.dot-green').css("background-color", gSettings.themes[gSettings.page.theme].colorOn);
+		$('.dot-green').css("background-color", currTheme.colorOn);
 	} else {
 		//console.log(thisUrl + " : " + response.status);
 	}

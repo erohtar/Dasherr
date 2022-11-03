@@ -18,7 +18,7 @@
 	<div class="container col-lg-12 col-xl-10" style="display:none">
 		
 		<!-- Dashboard Contents -->
-		<div id="tilesWidgets" class="row">
+		<div class="row">
 			<h2 id="pageTitle"></h2>
 			<hr>
 		</div>
@@ -26,19 +26,19 @@
 		
 		<!-- Widgets here -->
 		<div id="tilesWidgets" class="row">
-			<div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 gy-3 overflow-hidden mb-5">
-				<div class="widget text-start">
+			<div class="row-cols-3 row-cols-sm-4 row-cols-md-6 row-cols-lg-10 row-cols-xl-12 gy-3 mb-5">
+				<div class="widget text-end">
 					<div class="row">
-						<span class="col"><i class="fa fa-microchip"></i></span>
-						<span class="col" id="cpuPrct"></span>
+						<span class="col-2"><i class="fa fa-temperature-low"></i></span>
+						<span class="col-7" id="cpuTemp"></span>
 					</div>
 					<div class="row">
-						<span class="col"><i class="fa fa-memory"></i></span>
-						<span class="col" id="memPrct"></span>
+						<span class="col-2"><i class="fa fa-microchip"></i></span>
+						<span class="col-7" id="cpuPrct"></span>
 					</div>
 					<div class="row">
-						<span class="col"><i class="fa fa-temperature-low"></i></span>
-						<span class="col" id="cpuTemp"></span>
+						<span class="col-2"><i class="fa fa-memory"></i></span>
+						<span class="col-7" id="memPrct"></span>
 					</div>
 				</div>
 			</div>
@@ -46,7 +46,7 @@
 	
 		
 		<!-- Section/Tiles get added here -->
-		<div id="tilesServices" class="row row-cols-sm-1 row-cols-md-2 row-cols-lg-4 gy-5 overflow-hidden">
+		<div id="tilesServices" class="row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 gy-5">
 		</div>
 			
 		<!-- End Dashboard Contents -->
