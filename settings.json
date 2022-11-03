@@ -245,7 +245,7 @@
 			"colorOf": "#263238"
 		},
 		"Paper": {
-			"background": "res/bgLight.jpg",
+			"background": "",
 			"colorBg": "#f8f6f1",
 			"colorPr": "#4c432e",
 			"colorSc": "#aa9a73",
