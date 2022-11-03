@@ -6,8 +6,8 @@ var currTheme = gSettings.themes[gSettings.page.theme];
 setInterval(glances, gSettings.widgets.glances.refreshMs);
 
 window.onload = function() {
-	//show page here for debugging
-	//document.getElementsByClassName("container")[0].style = "display:block;";
+	//show page here for debugging OR if we rather want to be safe and not display a blank page on ANY error
+	document.getElementsByClassName("container")[0].style = "display:block;";
 
 	//page settings
 	document.title = gSettings.page.title;
@@ -25,7 +25,7 @@ window.onload = function() {
 	applyTheme();
 	
 	//show page now after creating elements
-	document.getElementsByClassName("container")[0].style = "display:block;";
+	//document.getElementsByClassName("container")[0].style = "display:block;";
 	
 
 	//check online status of all tiles
@@ -125,7 +125,7 @@ function createSections() {
 			var tileLink = document.createElement("a");
 			tileLink.id = "tile" + thisSec + thisTile;
 			tileLink.href = gSettings.sections[n1].tiles[n2].url;
-			if (gSettings.openTab = "new") {
+			if (gSettings.openTab === "new") {
 				tileLink.target = "_blank";
 			}
 			
@@ -170,7 +170,7 @@ async function checkOnline(thisUrl, thisId) {
 	};
 
 	const response = await fetch(thisUrl,options);
-	if (response.status = 200) {
+	if (response.status === 200) {
 		thisId.className = thisId.className.replace(/dot(?!\S)/g, "dot dot-green");
 		
 		//this theming needs to be done here because js can't change style of future elements of a class
