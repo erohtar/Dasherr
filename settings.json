@@ -6,42 +6,35 @@
 	},
 	"widgets": {
 		"glances": {
-			"disable": 0,
 			"url": "http://homeserver:61208/",
 			"refreshMs": 5000
 		}
 	},
 	"sections": [
 		{
-			"disable": 0,
 			"name": "Monitor",
 			"tiles": [
 				{
-        			"disable": 0,
 					"name": "Glances",
 					"url": "http://homeserver:61208/",
 					"faIcon": "fa fa-microchip"
 				},
 				{
-        			"disable": 0,
 					"name": "Healthchecks",
 					"url": "https://healthchecks.io/projects/2044590e-ff23-4b47-af2d-392fc758fe5a/checks/",
 					"faIcon": "fa fa-heart-pulse"
 				},
 				{
-        			"disable": 0,
 					"name": "UptimeKuma",
 					"url": "http://homeserver:3001/",
 					"faIcon": "fa fa-wave-square"
 				},
 				{
-        			"disable": 0,
 					"name": "Scrutiny",
 					"url": "http://homeserver:8030/",
 					"faIcon": "fa fa-hard-drive"
 				},
 				{
-        			"disable": 0,
 					"name": "Dozzle",
 					"url": "http://homeserver:9999/",
 					"faIcon": "fa fa-bars"
@@ -49,17 +42,14 @@
 			]
 		},
 		{
-			"disable": 0,
 			"name": "Maintenance",
 			"tiles": [
 				{
-        			"disable": 0,
 					"name": "Portainer",
 					"url": "http://homeserver:9000/",
 					"faIcon": "fab fa-docker"
 				},
 				{
-        			"disable": 0,
 					"name": "FileBrowser",
 					"url": "http://homeserver:8020/",
 					"faIcon": "fa fa-folder-tree"
@@ -67,35 +57,29 @@
 			]
 		},
 		{
-			"disable": 0,
 			"name": "Media",
 			"tiles": [
 				{
-        			"disable": 0,
 					"name": "JellyFin",
 					"url": "http://homeserver:8096/",
 					"faIcon": "fa fa-video"
 				},
 				{
-        			"disable": 0,
 					"name": "Radarr",
 					"url": "http://homeserver:7878/",
 					"faIcon": "fa fa-clapperboard"
 				},
 				{
-        			"disable": 0,
 					"name": "Sonarr",
 					"url": "http://homeserver:8989/",
 					"faIcon": "fa fa-tv"
 				},
 				{
-        			"disable": 0,
 					"name": "Readarr",
 					"url": "http://homeserver:8787/",
 					"faIcon": "fa fa-book"
 				},
 				{
-        			"disable": 0,
 					"name": "Bazarr",
 					"url": "http://homeserver:6767/",
 					"faIcon": "fa fa-closed-captioning"
@@ -103,17 +87,14 @@
 			]
 		},
 		{
-			"disable": 0,
 			"name": "Services",
 			"tiles": [
 				{
-        			"disable": 0,
 					"name": "ChangeDetection",
 					"url": "http://homeserver:5000/",
 					"faIcon": "fa fa-bell"
 				},
 				{
-        			"disable": 0,
 					"name": "Syncthing",
 					"url": "http://homeserver:8384/",
 					"faIcon": "fa fa-rotate"
@@ -121,36 +102,30 @@
 			]
 		},
 		{
-			"disable": 0,
 			"name": "Network",
 			"tiles": [
 				{
-        			"disable": 0,
 					"name": "Tailscale",
 					"url": "https://login.tailscale.com/admin/machines",
 					"faIcon": "fa fa-network-wired"
 				},
 				{
-        			"disable": 0,
-        			"disableCheck": 1,
 					"name": "Router",
 					"url": "http://192.168.29.1/",
 					"faIcon": "fa fa-network-wired"
+					"disableCheck": 1,
 				}
 			]
 		},
 		{
-			"disable": 0,
 			"name": "VPN",
 			"tiles": [
 				{
-        			"disable": 0,
 					"name": "qBittorrent",
 					"url": "http://homeserver:8080/",
 					"faIcon": "fa fa-skull-crossbones"
 				},
 				{
-        			"disable": 0,
 					"name": "Prowlarr",
 					"url": "http://homeserver:9696/",
 					"faIcon": "fa fa-spider"
@@ -162,30 +137,25 @@
 			"name": "Database",
 			"tiles": [
 				{
-        			"disable": 0,
 					"name": "CouchDB",
 					"url": "http://homeserver:5984",
 					"faIcon": "fa-solid fa-database"
 				}			]
 		},
 		{
-			"disable": 0,
 			"name": "AWS",
 			"tiles": [
 				{
-        			"disable": 0,
 					"name": "Portainer",
 					"url": "http://aws:9000/",
 					"faIcon": "fab fa-docker"
 				},
 				{
-        			"disable": 0,
 					"name": "FileBrowser",
 					"url": "http://aws:8020/",
 					"faIcon": "fa fa-folder-tree"
 				},
 				{
-        			"disable": 0,
 					"name": "UptimeKuma",
 					"url": "http://aws:3001/",
 					"faIcon": "fa fa-wave-square"
