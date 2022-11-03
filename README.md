@@ -1,6 +1,8 @@
 # Dasherr
 A minimal and lightweight dashboard for your self-hosted services
 
+![image](https://user-images.githubusercontent.com/5120628/199825180-c7130c78-2e36-475b-a2d7-7c04c71ed513.png)
+
 ## Intro
 After trying out quite a few server dashboards and not quite finding the right one that:
 - was minimal and static enough to not consume much resources (both on server and client)
