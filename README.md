@@ -93,6 +93,27 @@ Configurable settings:
 - `disable` - (Optional) If set to `1`, this Tile will not be shown
 - `disableCheck` - (Optional) If set to `1`, the online check will not be performed for this Tile
 
+Sample (Section and Tiles):
+```
+"sections": [
+	{
+		"name": "Maintenance",
+		"tiles": [
+			{
+				"name": "Portainer",
+				"url": "http://homeserver:9000/",
+				"faIcon": "fab fa-docker"
+			},
+			{
+				"name": "FileBrowser",
+				"url": "http://homeserver:8020/",
+				"faIcon": "fa fa-folder-tree"
+			}
+		]
+	}
+]
+```
+
 ### 'Themes'
 Dasherr comes with several built-in themes, and you can easily add your own by copying any existing theme in settings file and making edits to the hex color values and/or background.
 
