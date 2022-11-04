@@ -45,6 +45,12 @@
 			"name": "Media",
 			"tiles": [
 				{
+					"disable": 1,
+					"name": "Readarr",
+					"url": "http://homeserver:8787/",
+					"faIcon": "fa fa-book"
+				},
+				{
 					"name": "JellyFin",
 					"url": "http://homeserver:8096/",
 					"faIcon": "fa fa-video"
