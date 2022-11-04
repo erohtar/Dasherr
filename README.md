@@ -30,7 +30,7 @@ A sample settings.json is included in the release. It should be used as a templa
 ### Page
 The 'page' settings allow you to define these top-level options:
 - `title` - Title of your dashboard
-- `theme` - Name of any theme of your choice from the themes defined in the Themes section
+- `theme` - Name of current theme from the Themes section in settings.json file
 - `openTab` - When you click on a service tile, this setting decides whether it's opened in a new tab or the same tab (possible values `new` and `same`)
 
 Sample:
@@ -99,7 +99,7 @@ Sample (Section and Tiles):
 ```
 
 ### Themes
-Dasherr comes with several built-in themes, and you can easily add your own by copying any existing theme in settings file and making edits to the hex color values and/or background.
+Dasherr comes with several built-in themes, and you can easily add your own by copying any existing theme in settings file and making edits to the hex color values and/or add picture background.
 
 Configurable settings:
 - `background` - This could be a local or web wallpaper background
