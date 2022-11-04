@@ -125,7 +125,7 @@ function createSections() {
 			var tileLink = document.createElement("a");
 			tileLink.id = "tile" + thisSec + thisTile;
 			tileLink.href = gSettings.sections[n1].tiles[n2].url;
-			if (gSettings.openTab === "new") {
+			if (gSettings.openTab = "new") {
 				tileLink.target = "_blank";
 			}
 			
@@ -170,7 +170,7 @@ async function checkOnline(thisUrl, thisId) {
 	};
 
 	const response = await fetch(thisUrl,options);
-	if (response.status === 200) {
+	if (response.status = 200) {
 		thisId.className = thisId.className.replace(/dot(?!\S)/g, "dot dot-green");
 		
 		//this theming needs to be done here because js can't change style of future elements of a class
