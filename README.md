@@ -14,7 +14,7 @@ A minimal and lightweight dashboard for your self-hosted services (and bookmarks
 
 ## Installation
 ### With Docker
-- Install any webserver Docker container (I myself use [this one](https://hub.docker.com/r/linuxserver/nginx))
+- Install a webserver under Docker (I myself use [this one](https://hub.docker.com/r/linuxserver/nginx))
 - Drop all the files from Dasherr release into the `config/www` folder of nginx (or another webserver of your choice)
 - If all went well, Dasherr will be running on port 80/443 of your server
 
