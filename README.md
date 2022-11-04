@@ -1,7 +1,7 @@
 ![image](https://user-images.githubusercontent.com/5120628/199825180-c7130c78-2e36-475b-a2d7-7c04c71ed513.png)
 
 # Dasherr
-A minimal and lightweight dashboard for your self-hosted services
+A minimal and lightweight dashboard for your self-hosted services (and bookmarks)
 
 ## Features:
 - Light on resources, loads instantly and responsive design (uses Bootstrap framework)
