@@ -4,18 +4,17 @@
 A minimal and lightweight dashboard for your self-hosted services
 
 ## Features:
-- Extremely lightweight (loads instantly), and responsive (uses Bootstrap framework)
+- Light on resources, loads instantly and responsive design (uses Bootstrap framework)
 - Shows Temperature, CPU load and Memory used by tapping into Glances API (default 5s updates)
 - Online check of services (checked only on page load/refresh to stay light on resources)
 - Themes
 - FontAwesome icons
 - Wallpaper backgrounds
-- Section/tile/widget can be quickly disabled without having to remove its data from settings (in case you might want to enable/use it later)
 - All settings in a single easy to edit json file
 
 ## Installation
 ### With Docker
-- Install any webserver Docker container (I myself use and recommend [this one](https://hub.docker.com/r/linuxserver/nginx) )
+- Install any webserver Docker container (I myself use [this one](https://hub.docker.com/r/linuxserver/nginx))
 - Drop all the files from Dasherr release into the `config/www` folder of nginx (or another webserver of your choice)
 - If all went well, Dasherr will be running on port 80/443 of your server
 
