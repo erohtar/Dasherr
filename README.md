@@ -22,6 +22,8 @@ A minimal and lightweight dashboard for your self-hosted services
 - Simply drop the files from Dasher release into your webserver's `www` folder
 - If all went well, Dasherr will be running on port 80/443 of your server
 
+**IMPORTANT** : Unless this is your first install of Dasherr, **do NOT overwrite your existing settings.json file** with the included sample/template file, otherwise you'll lose your custom configuration.
+
 ## Configuration
 A sample settings.json is included in the release. It should be used as a template to edit/add your own Sections and Tiles (services). All the configuration settings are explained below.
 
