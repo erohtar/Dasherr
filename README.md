@@ -15,25 +15,7 @@ A minimal and lightweight dashboard for your self-hosted services
 
 ## Installation
 ### With Docker
-- Install any webserver Docker container (I myself use and recommend [this one](https://hub.docker.com/r/linuxserver/nginx))
-- Here's a sample Docker configuration for the above container
-```
-version: "2.1"
-services:
-  nginx:
-    image: lscr.io/linuxserver/nginx:latest
-    container_name: nginx
-    environment:
-      - PUID=1000
-      - PGID=1000
-      - TZ=Asia/Kolkata
-    volumes:
-      - /home/pi/Docker/nginx/config:/config
-    ports:
-      - 80:80
-      - 443:443
-    restart: unless-stopped
-```
+- Install any webserver Docker container (I myself use and recommend [this one](https://hub.docker.com/r/linuxserver/nginx) )
 - Drop all the files from Dasherr release into the `config/www` folder of nginx (or another webserver of your choice)
 - If all went well, Dasherr will be running on port 80/443 of your server
 
@@ -44,8 +26,8 @@ services:
 ## Configuration
 A sample settings.json is included in the release. It should be used as a template to edit/add your own Sections and Tiles (services). All the configuration settings are explained below.
 
-### 'Page' 
-The 'page' settings allow you to define some top-level settings:
+### Page
+The 'page' settings allow you to define these top-level options:
 - `title` - Title of your dashboard
 - `theme` - Name of any theme of your choice from the themes defined in the Themes section
 - `openTab` - When you click on a service tile, this setting decides whether it's opened in a new tab or the same tab (possible values `new` and `same`)
@@ -59,7 +41,7 @@ Sample:
 }
 ```
 
-### 'Widgets'
+### Widgets
 There's only one widget currently supported - Glances. That's not because of my laziness (even though I don't deny that trait), but to keep with the minimal design and stay light on resources.
 
 Configurable settings:
@@ -76,7 +58,7 @@ Sample:
 }
 ```
 
-### 'Sections'
+### Sections
 This is an array of any number of individual Sections in your dashboard.
 
 Configurable settings:
@@ -84,7 +66,7 @@ Configurable settings:
 - `tiles` - See below
 - `disable` - (Optional) If set to `1`, this Section will not be shown
 
-### 'Tiles'
+### Tiles
 This is an array of any number of individual Tiles (services) in a section.
 
 Configurable settings:
@@ -115,7 +97,7 @@ Sample (Section and Tiles):
 ]
 ```
 
-### 'Themes'
+### Themes
 Dasherr comes with several built-in themes, and you can easily add your own by copying any existing theme in settings file and making edits to the hex color values and/or background.
 
 Configurable settings:
