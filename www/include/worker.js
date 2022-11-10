@@ -6,7 +6,7 @@ var currTheme = gSettings.themes[gSettings.page.theme];
 setInterval(glances, gSettings.widgets.glances.refreshMs);
 
 window.onload = function() {
-	//show page here for debugging OR if we rather want to be safe and not display a blank page on ANY error
+	//show page contents at this point
 	document.getElementsByClassName("container")[0].style = "display:block;";
 
 	//page settings
@@ -24,8 +24,6 @@ window.onload = function() {
 	//apply theme now
 	applyTheme();
 	
-	//show page now after creating elements
-	//document.getElementsByClassName("container")[0].style = "display:block;";
 	
 
 	//check online status of all tiles
