@@ -35,6 +35,8 @@ $('#saveFile').on('click', function () {
 	xhr.open( 'POST', 'include/filesave.php', false );
 	xhr.send(data);
 	console.log('done');
+	location.reload();
+	return false;
 });
 
 function applyTheme() {
