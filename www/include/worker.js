@@ -157,6 +157,7 @@ function applyTheme() {
 	$('body').css("background-color", currTheme.colorBg);
 	$('.dot').css("background-color", currTheme.colorOf);
 	$('.tile').css("color", currTheme.colorPr);
+	$('.iconButton').css("color", currTheme.colorPr);
 	$('.widget').css("color", currTheme.colorPr);
 }
 

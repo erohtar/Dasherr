@@ -23,6 +23,12 @@ body {
 	color: white;
 }
 
+.iconButton {
+	float: right;
+	margin-bottom: 5px;
+	color: white;
+}
+
 #pageTitle {
 	margin-top: 50px;
 }
