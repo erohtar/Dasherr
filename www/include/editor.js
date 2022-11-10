@@ -34,9 +34,6 @@ $('#saveFile').on('click', function () {
 	var xhr = new XMLHttpRequest();
 	xhr.open( 'POST', 'include/filesave.php', false );
 	xhr.send(data);
-	console.log('done');
-	location.reload();
-	return false;
 });
 
 function applyTheme() {
@@ -49,6 +46,7 @@ function applyTheme() {
 	$('body').css("background-color", currTheme.colorBg);
 	$('.dot').css("background-color", currTheme.colorOf);
 	$('.tile').css("color", currTheme.colorPr);
+	$('.iconButton').css("color", currTheme.colorPr);
 	$('.widget').css("color", currTheme.colorPr);
 }
 
