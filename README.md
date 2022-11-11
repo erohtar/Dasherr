@@ -11,7 +11,7 @@ A minimal and lightweight dashboard for your self-hosted services (and bookmarks
 - FontAwesome icons
 - Wallpaper backgrounds
 - All settings in a single easy to edit json file, **with built-in editor**
-![image](https://user-images.githubusercontent.com/5120628/201361287-b293b6fc-f3fd-4e3b-bb2b-44a265c0747a.png)
+![image](https://user-images.githubusercontent.com/5120628/201361841-2f763600-4037-4961-8819-2be8c4597e06.png)
 
 ## Installation
 ### With Docker
