@@ -10,7 +10,8 @@ A minimal and lightweight dashboard for your self-hosted services (and bookmarks
 - Themes
 - FontAwesome icons
 - Wallpaper backgrounds
-- All settings in a single easy to edit json file
+- All settings in a single easy to edit json file, **with built-in editor**
+![image](https://user-images.githubusercontent.com/5120628/201361287-b293b6fc-f3fd-4e3b-bb2b-44a265c0747a.png)
 
 ## Installation
 ### With Docker
@@ -21,8 +22,6 @@ A minimal and lightweight dashboard for your self-hosted services (and bookmarks
 ### Without Docker
 - Simply drop the files from Dasher release into your webserver's `www` folder
 - If all went well, Dasherr will be running on port 80/443 of your server
-
-**IMPORTANT** : Unless this is your first install of Dasherr, **do NOT overwrite your existing settings.json file** with the included sample/template file, otherwise you'll lose your custom configuration.
 
 ## Configuration
 A sample settings.json is included in the release. It should be used as a template to edit/add your own Sections and Tiles (services). All the configuration settings are explained below.
