@@ -3,8 +3,8 @@ var gSettings = JSON.parse(fileReader("settings.json"));
 var currTheme = gSettings.themes[gSettings.page.theme];
 
 //load file
-const editor = new JsonEditor('#json-display', getJson());
-editor.load(getJson());
+const editor = new JsonEditor('#json-display', readSettingsJson());
+editor.load(readSettingsJson());
 applyTheme();
 
 function fileReader(pathOfFileToReadFrom)
@@ -17,7 +17,7 @@ function fileReader(pathOfFileToReadFrom)
 	return request.responseText;
 }
 
-function getJson() {
+function readSettingsJson() {
 	try {
 		return JSON.parse(fileReader('settings.json'));
 	} catch (ex) {
@@ -26,27 +26,17 @@ function getJson() {
 }
 
 $('#saveFile').on('click', function () {
-	let fileData = JSON.stringify(editor.get(getJson()), null, '\t');
+	let fileData = JSON.stringify(editor.get(readSettingsJson()), null, '\t');
 	
 	var data = new FormData();
+	//for the php file, settings.json is in parent folder
 	data.append("file" , '../settings.json');
 	data.append("data" , fileData);
 	var xhr = new XMLHttpRequest();
 	xhr.open( 'POST', 'include/filesave.php', false );
 	xhr.send(data);
+	
+	setTimeout(() => {
+		window.location.href = 'index.html';
+	}, 1000);
 });
-
-function applyTheme() {
-	//hate duplicating code here. there has to be a better way to include theming code in just a single file
-
-	if (currTheme.background) {
-		$('body').css("background-image", "url('" + currTheme.background +"')");
-	}
-	$('body').css("--bs-body-color", currTheme.colorSc);
-	$('body').css("background-color", currTheme.colorBg);
-	$('.dot').css("background-color", currTheme.colorOf);
-	$('.tile').css("color", currTheme.colorPr);
-	$('.iconButton').css("color", currTheme.colorPr);
-	$('.widget').css("color", currTheme.colorPr);
-}
-
