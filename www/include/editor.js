@@ -37,6 +37,6 @@ $('#saveFile').on('click', function () {
 	xhr.send(data);
 	
 	setTimeout(() => {
-		window.location.href = 'index.html';
+		window.location.href = 'index.php';
 	}, 1000);
 });
