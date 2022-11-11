@@ -1,5 +1,8 @@
 <!doctype html>
 <html lang="en">
+
+  <?php include 'include/samplesettings.php';?>
+
   <head>
 	<title>Dashboard</title>
 
