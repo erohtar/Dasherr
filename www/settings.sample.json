@@ -5,7 +5,9 @@
 		"openTab": "new"
 	},
 	"widgets": {
+		"disable": 0,
 		"glances": {
+			"disable": 0,
 			"url": "http://homeserver:61208/",
 			"refreshMs": 5000
 		}

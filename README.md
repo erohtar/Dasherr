@@ -51,6 +51,7 @@ There's only one widget currently supported - Glances. That's not because of my 
 Configurable settings:
 - `url` - Service URL with the ending slash
 - `refreshMs` - How many ms to wait before updating (default is 5000ms or 5 seconds)
+- `disable` - (Optional) If set to `1`, this widget will not be loaded
 
 Sample:
 ```

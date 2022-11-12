@@ -11,10 +11,13 @@ window.onload = function() {
 	document.title = gSettings.page.title;
 	document.getElementById("pageTitle").innerHTML = gSettings.page.title;
 	
-	//load widgets
+	//show widgets area if not all widgets disabled
 	if(!gSettings.widgets.disable) {
 		document.getElementById("areaWidgets").style = "display:block;";
-		if(gSettings.widgets.glances.url != "") {
+		
+		//load glances widget if not disabled
+		if(!gSettings.widgets.glances.disable) {
+			document.getElementById("widgetGlances").style = "display:block;";
 			glances();
 			//setup widget auto-refresh
 			setInterval(glances, gSettings.widgets.glances.refreshMs);

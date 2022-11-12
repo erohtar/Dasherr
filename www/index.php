@@ -41,7 +41,7 @@
 		<!-- Widgets here -->
 		<div id="areaWidgets" class="row mb-5" style="display:none">
 			<div class="row-cols-3 row-cols-sm-4 row-cols-md-6 row-cols-lg-10 row-cols-xl-12 gy-3">
-				<div class="widget text-end">
+				<div id="widgetGlances" class="widget text-end" style="display:none">
 					<div class="row">
 						<span class="col-2"><i class="fa fa-temperature-low"></i></span>
 						<span class="col-7" id="cpuTemp"></span>
