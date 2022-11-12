@@ -12,7 +12,7 @@ window.onload = function() {
 	document.getElementById("pageTitle").innerHTML = gSettings.page.title;
 	
 	//load widgets
-	if(gSettings.widgets.disable !== 1) {
+	if(!gSettings.widgets.disable) {
 		document.getElementById("areaWidgets").style = "display:block;";
 		if(gSettings.widgets.glances.url != "") {
 			glances();
