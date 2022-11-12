@@ -2,8 +2,6 @@
 var gSettings = JSON.parse(fileReader("settings.json"));
 var currTheme = gSettings.themes[gSettings.page.theme];
 
-//setup widget auto-refresh
-setInterval(glances, gSettings.widgets.glances.refreshMs);
 
 window.onload = function() {
 	//show page contents at this point
@@ -14,8 +12,13 @@ window.onload = function() {
 	document.getElementById("pageTitle").innerHTML = gSettings.page.title;
 	
 	//load widgets
-	if(gSettings.widgets.glances.url != "") {
-		glances();
+	if(gSettings.widgets.disable !== 1) {
+		document.getElementById("areaWidgets").style = "display:block;";
+		if(gSettings.widgets.glances.url != "") {
+			glances();
+			//setup widget auto-refresh
+			setInterval(glances, gSettings.widgets.glances.refreshMs);
+		}
 	}
 	
 	//create sections+tiles for services
@@ -81,7 +84,7 @@ function glances() {
 
 
 function createSections() {
-	var hostDiv = document.getElementById("tilesServices");
+	var hostDiv = document.getElementById("areaSections");
 	for (var n1 = 0; n1 < gSettings.sections.length; n1++) {
 		if (gSettings.sections[n1].disable) {
 			//allows quickly disabling a section

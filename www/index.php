@@ -39,8 +39,8 @@
 		
 		
 		<!-- Widgets here -->
-		<div id="tilesWidgets" class="row">
-			<div class="row-cols-3 row-cols-sm-4 row-cols-md-6 row-cols-lg-10 row-cols-xl-12 gy-3 mb-5">
+		<div id="areaWidgets" class="row mb-5" style="display:none">
+			<div class="row-cols-3 row-cols-sm-4 row-cols-md-6 row-cols-lg-10 row-cols-xl-12 gy-3">
 				<div class="widget text-end">
 					<div class="row">
 						<span class="col-2"><i class="fa fa-temperature-low"></i></span>
@@ -60,7 +60,7 @@
 	
 		
 		<!-- Section/Tiles get added here -->
-		<div id="tilesServices" class="row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 gy-5">
+		<div id="areaSections" class="row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 gy-5">
 		</div>
 			
 		<!-- End Dashboard Contents -->
