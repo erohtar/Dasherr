@@ -1,23 +1,23 @@
 //globals
-var gSettings = JSON.parse(fileReader("settings.json"));
-var currTheme = gSettings.themes[gSettings.page.theme];
+const gSettings = JSON.parse(fileReader('settings.json'));
+const currTheme = gSettings.themes[gSettings.page.theme];
 
 
 window.onload = function() {
 	//show page contents at this point
-	document.getElementsByClassName("container")[0].style = "display:block;";
+	document.getElementsByClassName('container')[0].style = 'display:block;';
 
 	//page settings
 	document.title = gSettings.page.title;
-	document.getElementById("pageTitle").innerHTML = gSettings.page.title;
+	document.getElementById('pageTitle').innerHTML = gSettings.page.title;
 	
 	//show widgets area if not all widgets disabled
 	if(!gSettings.widgets.disable) {
-		document.getElementById("areaWidgets").style = "display:block;";
+		document.getElementById('areaWidgets').style = 'display:block;';
 		
 		//load glances widget if not disabled
 		if(!gSettings.widgets.glances.disable) {
-			document.getElementById("widgetGlances").style = "display:block;";
+			document.getElementById('widgetGlances').style = 'display:block;';
 			glances();
 			//setup widget auto-refresh
 			setInterval(glances, gSettings.widgets.glances.refreshMs);
@@ -30,23 +30,21 @@ window.onload = function() {
 	//apply theme now
 	applyTheme();
 	
-	
-
 	//check online status of all tiles
-	for (var n1 = 0; n1 < gSettings.sections.length; n1++) {
+	for (let n1 = 0; n1 < gSettings.sections.length; n1++) {
 		if (gSettings.sections[n1].disable) {
 			//allows quickly disabling a section
 			continue;
 		}
 		
-		for (var n2 = 0; n2 < gSettings.sections[n1].tiles.length; n2++) {
+		for (let n2 = 0; n2 < gSettings.sections[n1].tiles.length; n2++) {
     		if (gSettings.sections[n1].tiles[n2].disable) {
     			//allows quickly disabling a tile
     			continue;
     		}
 			
-			var thisUrl = gSettings.sections[n1].tiles[n2].url;
-			var thisDot = document.getElementById("dot" + gSettings.sections[n1].name + gSettings.sections[n1].tiles[n2].name)
+			let thisUrl = gSettings.sections[n1].tiles[n2].url;
+			let thisDot = document.getElementById('dot' + gSettings.sections[n1].name + gSettings.sections[n1].tiles[n2].name)
 			
     		if (gSettings.sections[n1].tiles[n2].disableCheck) {
     			//allows quickly disabling a tile online check
@@ -62,12 +60,12 @@ window.onload = function() {
 //to read settings file
 function fileReader(pathOfFileToReadFrom)
 {
-	var request = new XMLHttpRequest();
-	request.open("GET", pathOfFileToReadFrom, false);
-	request.setRequestHeader("X-Requested-With", "XMLHttpRequest");
-	request.setRequestHeader("Access-Control-Allow-Origin", "*");
+	let request = new XMLHttpRequest();
+	request.open('GET', pathOfFileToReadFrom, false);
+	request.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+	request.setRequestHeader('Access-Control-Allow-Origin', '*');
 	request.send(null);
-	var returnValue = request.responseText;
+	let returnValue = request.responseText;
 
 	return returnValue;
 }
@@ -75,76 +73,85 @@ function fileReader(pathOfFileToReadFrom)
 
 //widget refresh functions
 function glances() {
-	$.getJSON({url: gSettings.widgets.glances.url + "api/3/quicklook"}).done(function (result, status, xhr) {
-		document.getElementById("cpuPrct").innerText = result.cpu + "%"
-		document.getElementById("memPrct").innerText = result.mem + "%"
+	$.getJSON({url: gSettings.widgets.glances.url + 'api/3/quicklook'}).done(function (result, status, xhr) {
+		document.getElementById('cpuPrct').innerText = result.cpu + '%'
+		document.getElementById('memPrct').innerText = result.mem + '%'
 	});
 	
-	$.getJSON({url: gSettings.widgets.glances.url + "api/3/sensors"}).done(function (result, status, xhr) {
-		document.getElementById("cpuTemp").innerText = result[0].value + "C"
+	$.getJSON({url: gSettings.widgets.glances.url + 'api/3/sensors'}).done(function (result, status, xhr) {
+		document.getElementById('cpuTemp').innerText = result[0].value + 'C'
 	});
 }
 
 
 function createSections() {
-	var hostDiv = document.getElementById("areaSections");
-	for (var n1 = 0; n1 < gSettings.sections.length; n1++) {
+	let hostDiv = document.getElementById('areaSections');
+	for (let n1 = 0; n1 < gSettings.sections.length; n1++) {
 		if (gSettings.sections[n1].disable) {
 			//allows quickly disabling a section
 			continue;
 		}
 		
-		var thisSec = gSettings.sections[n1].name;
+		let thisSec = gSettings.sections[n1].name;
 
-		var secDiv = document.createElement("div");
+		let secDiv = document.createElement('div');
 		
-		secDiv.classList.add("col");
-		secDiv.classList.add("col-sm-6");
+		secDiv.classList.add('col');
+		secDiv.classList.add('col-sm-6');
 		
 		hostDiv.appendChild(secDiv);
 		
-		var secTitle = document.createElement("div");
+		let secTitle = document.createElement('div');
 		
-		secTitle.classList.add("h6");
-		secTitle.innerHTML = thisSec + "<hr>";
+		secTitle.classList.add('h6');
+		secTitle.innerHTML = thisSec + '<hr>';
 		
 		secDiv.appendChild(secTitle);
 		
-		for (var n2 = 0; n2 < gSettings.sections[n1].tiles.length; n2++) {
+		for (let n2 = 0; n2 < gSettings.sections[n1].tiles.length; n2++) {
     		if (gSettings.sections[n1].tiles[n2].disable) {
     			//allows quickly disabling a tile
     			continue;
     		}
-            var thisTile = gSettings.sections[n1].tiles[n2].name;
+            let thisTile = gSettings.sections[n1].tiles[n2].name;
 
 			//add indicator dot
-			var tileDot = document.createElement("span");
-			tileDot.id = "dot" + thisSec + thisTile;
-			tileDot.classList.add("dot");
+			let tileDot = document.createElement('span');
+			tileDot.id = 'dot' + thisSec + thisTile;
+			tileDot.classList.add('dot');
 			
 			secDiv.appendChild(tileDot);
 			
 			
 			//add link to tile
-			var tileLink = document.createElement("a");
-			tileLink.id = "tile" + thisSec + thisTile;
+			let tileLink = document.createElement('a');
+			tileLink.id = 'tile' + thisSec + thisTile;
 			tileLink.href = gSettings.sections[n1].tiles[n2].url;
-			if (gSettings.openTab = "new") {
-				tileLink.target = "_blank";
+			
+			//check if this tile has a different openTab setting, if not, use the page setting
+			let thisOpenTab;
+			if(gSettings.sections[n1].tiles[n2].openTab) {
+				thisOpenTab = gSettings.sections[n1].tiles[n2].openTab;
+			} else {
+				thisOpenTab = gSettings.page.openTab;
 			}
 			
-			tileLink.classList.add("tile");
-			tileLink.classList.add("btn");
-			tileLink.classList.add("overflow-hidden");
+			if (thisOpenTab === 'new') {
+				tileLink.target = '_blank';
+			}
+			
+			tileLink.classList.add('tile');
+			tileLink.classList.add('btn');
+			tileLink.classList.add('overflow-hidden');
 
 			secDiv.appendChild(tileLink);
 			
 			//add fontawesome icon to tile
-			if (gSettings.sections[n1].tiles[n2].faIcon != "") {
-				var tileIcon = document.createElement("i");
-				tileIcon.id = "icon" + thisSec + thisTile;
+			if (gSettings.sections[n1].tiles[n2].faIcon) {
+				let tileIcon = document.createElement('i');
+				tileIcon.id = 'icon' + thisSec + thisTile;
 				tileIcon.className = gSettings.sections[n1].tiles[n2].faIcon;
-				tileIcon.style = "margin-right: 5px;";
+				tileIcon.style = 'margin-right: 5px;';
 				
 				tileLink.appendChild(tileIcon);
 			}
@@ -156,17 +163,17 @@ function createSections() {
 async function checkOnline(thisUrl, thisId) {
 	//reads all tiles from settings and sets their respective indicators to green
 	const options = {
-		method: "GET",
-		mode: "no-cors"
+		method: 'GET',
+		mode: 'no-cors'
 	};
 
 	const response = await fetch(thisUrl,options);
 	if (response.status = 200) {
-		thisId.className = thisId.className.replace(/dot(?!\S)/g, "dot dot-green");
+		thisId.className = thisId.className.replace(/dot(?!\S)/g, 'dot dot-green');
 		
 		//this theming needs to be done here because js can't change style of future elements of a class
-		$('.dot-green').css("background-color", currTheme.colorOn);
+		$('.dot-green').css('background-color', currTheme.colorOn);
 	} else {
-		//console.log(thisUrl + " : " + response.status);
+		//console.log(thisUrl + ' : ' + response.status);
 	}
 }
