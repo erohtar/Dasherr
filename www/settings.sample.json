@@ -48,6 +48,7 @@
 			"tiles": [
 				{
 					"disable": 1,
+					"openTab": "same",
 					"name": "Readarr",
 					"url": "http://homeserver:8787/",
 					"faIcon": "fa fa-book"
