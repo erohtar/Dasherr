@@ -80,7 +80,7 @@ Configurable settings:
 - `faIcon` - The id of the FontAwesome icon you'd like to show for this service
 - `disable` - (Optional) If set to `1`, this Tile will not be shown
 - `disableCheck` - (Optional) If set to `1`, the online check will not be performed for this Tile
-- `openTab` - (Overrides page's `openTab` setting) When you click on this tile, this setting determines whether it's opened in a new tab or the same tab (possible values `new` or `same`)
+- `openTab` - (Optional - Overrides page's `openTab` setting) When you click on this tile, this setting determines whether it's opened in a new tab or the same tab (possible values `new` or `same`)
 
 Sample (Section and Tiles):
 ```
