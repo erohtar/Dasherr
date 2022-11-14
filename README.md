@@ -1,4 +1,4 @@
-![image](https://user-images.githubusercontent.com/5120628/199825180-c7130c78-2e36-475b-a2d7-7c04c71ed513.png)
+![image](https://user-images.githubusercontent.com/5120628/201701384-ccfde19c-0d85-4910-a5f7-dec246928f9e.png)
 
 # Dasherr
 A minimal and lightweight dashboard for your self-hosted services (and bookmarks)
@@ -7,9 +7,9 @@ A minimal and lightweight dashboard for your self-hosted services (and bookmarks
 - Light on resources, loads instantly and responsive design (uses Bootstrap framework)
 - Shows Temperature, CPU load and Memory used by tapping into Glances API (default 5s updates)
 - Online check of services (checked only on page load/refresh to stay light on resources)
-- Themes
-- FontAwesome icons
+- Several built-in Themes (easy to edit/add your own)
 - Wallpaper backgrounds
+- FontAwesome icons
 - All settings in a single easy to edit json file, **with built-in editor**
 
 ## Installation
