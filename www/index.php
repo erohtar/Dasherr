@@ -4,7 +4,7 @@
   <?php include 'include/samplesettings.php';?>
 
   <head>
-	<title>Dashboard</title>
+	<title>Dasherr</title>
 
 	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
 	<meta http-equiv="Pragma" content="no-cache" />
@@ -15,8 +15,8 @@
 	
 	<link href="include/bootstrap.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
-	<link rel="icon" href="res/favicon.svg" sizes="32x32" type="image/png">
 	<link href="include/custom.css" rel="stylesheet">
+	<link rel="icon" href="res/favicon.svg" sizes="32x32" type="image/png">
 	
 	<script src="include/bootstrap.bundle.min.js"></script>
 	<script src="include/jquery.min.js"></script>
