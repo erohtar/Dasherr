@@ -69,6 +69,7 @@ This is an array of any number of individual Sections in your dashboard.
 
 Configurable settings:
 - `name` - Self-explanatory
+- `info` - (Optional) Any description you'd like to add for this Section - shows as a tooltip on mouse-hover
 - `tiles` - See below
 - `disable` - (Optional) If set to `1`, this Section will not be shown
 
@@ -77,6 +78,7 @@ This is an array of any number of individual Tiles (services) in a section.
 
 Configurable settings:
 - `name` - Self-explanatory
+- `info` - (Optional) Any description you'd like to add for this Tile - shows as a tooltip on mouse-hover
 - `url` - Service URL with the ending slash
 - `faIcon` - The id of the FontAwesome icon you'd like to show for this service
 - `disable` - (Optional) If set to `1`, this Tile will not be shown

@@ -37,11 +37,9 @@ body {
 #json-input {
 	display: block;
 	width: 100%;
-	height: 200px;
 }
 
 #json-display {
 	border: 1px solid #000;
-	margin: 0;
 	padding: 10px 20px;
 }

@@ -1,6 +1,7 @@
 //globals
 const gSettings = JSON.parse(fileReader('settings.json'));
 const currTheme = gSettings.themes[gSettings.page.theme];
+let enableTooltips = false;
 
 
 window.onload = function() {
@@ -55,6 +56,12 @@ window.onload = function() {
 			checkOnline(thisUrl, thisDot)
 		}
 	}
+	
+	//enable tooltips only if used anywhere
+	if (enableTooltips === true)	{
+		const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+		const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
+	}
 };
 
 //to read settings file
@@ -98,14 +105,23 @@ function createSections() {
 		
 		secDiv.classList.add('col');
 		secDiv.classList.add('col-sm-6');
-		
+
 		hostDiv.appendChild(secDiv);
 		
 		let secTitle = document.createElement('div');
 		
 		secTitle.classList.add('h6');
-		secTitle.innerHTML = thisSec + '<hr>';
 		
+		//add tooltip to section
+		if (gSettings.sections[n1].info) {
+			enableTooltips = true;
+			secTitle.setAttribute("data-bs-toggle", "tooltip");
+			secTitle.setAttribute("data-bs-placement", "bottom");
+			secTitle.setAttribute("data-bs-title", gSettings.sections[n1].info);
+		}
+		
+		secTitle.innerHTML = thisSec + '<hr>';
+			
 		secDiv.appendChild(secTitle);
 		
 		for (let n2 = 0; n2 < gSettings.sections[n1].tiles.length; n2++) {
@@ -144,6 +160,14 @@ function createSections() {
 			tileLink.classList.add('btn');
 			tileLink.classList.add('overflow-hidden');
 
+			//add tooltip to tile
+			if (gSettings.sections[n1].tiles[n2].info) {
+				enableTooltips = true;
+				tileLink.setAttribute("data-bs-toggle", "tooltip");
+				tileLink.setAttribute("data-bs-placement", "bottom");
+				tileLink.setAttribute("data-bs-title", gSettings.sections[n1].tiles[n2].info);
+			}
+			
 			secDiv.appendChild(tileLink);
 			
 			//add fontawesome icon to tile
