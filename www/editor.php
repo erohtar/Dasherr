@@ -24,10 +24,12 @@
   <body>
 	<!-- Window Contents -->
 	<div class="container col-lg-12 col-xl-10">
-	<a href="index.php" class="iconButton float-end"><i class="fa-solid fa-server"></i></a>
-	<a href="https://github.com/erohtar/Dasherr/" target="_blank" class="iconButton float-end"><i class="fa-brands fa-github"></i></a>
 
 		<!-- Container Contents -->
+		<a href="index.php" class="iconButton float-end"><i class="fa-solid fa-server"></i></a>
+		
+		<a href="https://github.com/erohtar/Dasherr/" target="_blank" class="iconButton float-end"><i class="fa-brands fa-github"></i></a>
+		
 		<div class="row">
 			<h2 id="pageTitle">Dasherr Settings</h2>
 			<hr>
