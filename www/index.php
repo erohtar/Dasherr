@@ -29,7 +29,7 @@
 	<!-- Window Contents -->
 	<div class="container col-lg-12 col-xl-10" style="display:none">
 
-	<a href="editor.php" class="iconButton float-end"><i class="fa-solid fa-wrench"></i></a>
+		<a href="editor.php" class="iconButton float-end"><i class="fa-solid fa-wrench"></i></a>
 		
 		<!-- Dashboard Contents -->
 		<div class="row">
