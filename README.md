@@ -13,7 +13,7 @@ A minimal and lightweight dashboard for your self-hosted services (and bookmarks
 - Wallpaper backgrounds supported
 - FontAwesome icons
 - All settings in a single easy to edit json file, **with built-in editor**
-- Support for alterntate configurations without needing multiple Dasherr installations
+- Support for alternate configurations without needing multiple Dasherr installations
 
 ## Installation
 ### With Docker
