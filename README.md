@@ -5,14 +5,15 @@
 A minimal and lightweight dashboard for your self-hosted services (and bookmarks)
 
 ## Features:
-- Loads instantly + Light on resources
+- Loads instantly + Remains light on resources
 - Responsive design (uses Bootstrap framework)
 - Shows Temperature, CPU load and Memory used by tapping into Glances API (default 5s updates)
-- Built-in online check of services (checked only on page load/refresh to stay light on resources)
+- Built-in online check of services (checked only at time of page load/refresh, to minimize background activity/load)
 - Several built-in Themes (easy to edit/add your own)
 - Wallpaper backgrounds supported
 - FontAwesome icons
 - All settings in a single easy to edit json file, **with built-in editor**
+- Support for multiple alterntate configurations without needing multiple Dasherr installations
 
 ## Installation
 ### With Docker
@@ -50,7 +51,7 @@ Configurable settings:
 There's only one widget currently supported - Glances. That's not because of my laziness (even though I don't deny that trait), but to keep with the minimal design and stay light on resources.
 
 Configurable settings:
-- `url` - Service URL with the ending slash
+- `url` - Service URL
 - `refreshMs` - How many ms to wait before updating (default is 5000ms or 5 seconds)
 - `disable` - (Optional) If set to `1`, this widget will not be loaded
 
@@ -79,7 +80,7 @@ This is an array of any number of individual Tiles (services) in a section.
 Configurable settings:
 - `name` - Self-explanatory
 - `info` - (Optional) Any description you'd like to add for this Tile - shows as a tooltip on mouse-hover
-- `url` - Service URL with the ending slash
+- `url` - Service URL
 - `faIcon` - The id of the FontAwesome icon you'd like to show for this service
 - `disable` - (Optional) If set to `1`, this Tile will not be shown
 - `disableCheck` - (Optional) If set to `1`, the online check will not be performed for this Tile
@@ -129,7 +130,16 @@ Sample:
 }
 ``` 
 
+## Alternate Configurations
+Dasherr supports using alternate settings files - This allows having a different theme, a whole different set of sections/services on another Dasherr page without having multiple Dasherr installations.
+This file could group a different set of services (a self-hosted cloud instance, for example) or another home server etc.
+
+Usage:
+Put the alternate settings file in Dasherr's root folder and put its name in `s` url parameter.
+An example is included in the download, named `settings.sh.json`. Dasherr can be switched to use that instead, like so:
+`index.php?s=settings.sh.json`
+
 ## Credits
-- [Flame](https://github.com/jordanm88/flame-dashboard) : Very well made and clean looking static dashboard. I took the theme names and color swatches from Flame because they looked gorgeous to me, and for that I'm very grateful
-- [Dashy](https://github.com/lissy93/dashy) : Extremely flexible and beautifully made dashboard - the dev definitely is gifted. The inspiration to use online 'dots' came from here
-- [r/selfhosted](https://www.reddit.com/r/selfhosted/) : I got interested into self-hosting towards the end of 2021, and since then I've learnt a lot from this subreddit
+- **Flame** : Very well made and clean looking static dashboard. I took the theme names and color swatches from Flame because they looked gorgeous to me, and for that I'm very grateful
+- **Dashy** : Extremely flexible dashboard with a ton of features. The inspiration to use online 'dots' came from here
+- **r/selfhosted** : I got interested into self-hosting towards the end of 2021, and since then I've learnt a lot from this subreddit

@@ -1,5 +1,13 @@
 //globals
-const gSettings = JSON.parse(fileReader('settings.json'));
+
+//support for alt settings file (default being settings.json)
+const urlParams = new URLSearchParams(window.location.search);
+let settingsFile = urlParams.get('s')
+
+if (!settingsFile)
+	settingsFile = 'settings.json';
+
+const gSettings = JSON.parse(fileReader(settingsFile));
 const currTheme = gSettings.themes[gSettings.page.theme];
 let enableTooltips = false;
 

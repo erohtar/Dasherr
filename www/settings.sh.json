@@ -1,58 +1,50 @@
 {
 	"page": {
-		"title": "Dasherr",
-		"theme": "Onedark",
+		"title": "Self-Hosting Resources",
+		"theme": "Chalk",
 		"openTab": "new"
 	},
 	"widgets": {
-		"disable": 0,
+		"disable": 1,
 		"glances": {
-			"disable": 0,
+			"disable": 1,
 			"url": "http://homeserver:61208/",
 			"refreshMs": 5000
 		}
 	},
 	"sections": [
 		{
-			"name": "Resources",
+			"name": "Containers",
 			"tiles": [
 				{
-					"openTab": "same",
+					"name": "DockerHub",
+					"url": "https://hub.docker.com/",
+					"faIcon": "fa-brands fa-docker"
+				},
+				{
+					"name": "LinuxServer",
+					"url": "https://fleet.linuxserver.io",
+					"faIcon": "fa-brands fa-ubuntu"
+				}
+			]
+		},
+		{
+			"name": "Guides",
+			"tiles": [
+				{
+					"name": "WikiArr",
+					"url": "https://wiki.servarr.com/docker-guide/",
+					"faIcon": "fa fa-clapperboard"
+				},
+				{
 					"name": "Self-Hosting",
-					"url": "?s=settings.sh.json",
+					"url": "https://github.com/mikeroyal/Self-Hosting-Guide/",
+					"faIcon": "fa fa-server"
+				},
+				{
+					"name": "r/selfhosted",
+					"url": "https://www.reddit.com/r/selfhosted/",
 					"faIcon": "fa-regular fa-hard-drive"
-				}
-			]
-		},
-		{
-			"name": "Monitor",
-			"info": "Server monitoring services",
-			"tiles": [
-				{
-					"name": "Glances",
-					"info": "Glances is a cross-platform monitoring tool which aims to present a maximum of information in a minimum of space",
-					"url": "http://homeserver:61208/",
-					"faIcon": "fa fa-microchip"
-				},
-				{
-					"name": "UptimeKuma",
-					"url": "http://homeserver:3001/",
-					"faIcon": "fa fa-wave-square"
-				}
-			]
-		},
-		{
-			"name": "Maintenance",
-			"tiles": [
-				{
-					"name": "Portainer",
-					"url": "http://homeserver:9000/",
-					"faIcon": "fab fa-docker"
-				},
-				{
-					"name": "FileBrowser",
-					"url": "http://homeserver:8020/",
-					"faIcon": "fa fa-folder-tree"
 				}
 			]
 		},
@@ -60,40 +52,14 @@
 			"name": "Services",
 			"tiles": [
 				{
-					"name": "ChangeDetection",
-					"url": "http://homeserver:5000/",
-					"faIcon": "fa fa-bell"
+					"name": "Open-Source-Alternative",
+					"url": "https://www.opensourcealternative.to/",
+					"faIcon": "fa-brands fa-osi"
 				},
 				{
-					"name": "Syncthing",
-					"url": "http://homeserver:8384/",
-					"faIcon": "fa fa-rotate"
-				}
-			]
-		},
-		{
-			"name": "Media",
-			"tiles": [
-				{
-					"disable": 1,
-					"name": "Readarr",
-					"url": "http://homeserver:8787/",
-					"faIcon": "fa fa-book"
-				},
-				{
-					"name": "JellyFin",
-					"url": "http://homeserver:8096/",
-					"faIcon": "fa fa-video"
-				},
-				{
-					"name": "Radarr",
-					"url": "http://homeserver:7878/",
-					"faIcon": "fa fa-clapperboard"
-				},
-				{
-					"name": "Sonarr",
-					"url": "http://homeserver:8989/",
-					"faIcon": "fa fa-tv"
+					"name": "FontAwesome",
+					"url": "https://fontawesome.com/icons/",
+					"faIcon": "fa-solid fa-font-awesome"
 				}
 			]
 		}
