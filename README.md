@@ -8,8 +8,8 @@ A minimal and lightweight dashboard for your self-hosted services (and bookmarks
 - Loads instantly + Remains light on resources
 - Responsive design (uses Bootstrap framework)
 - Shows Temperature, CPU load and Memory used by tapping into Glances API (default 5s updates)
-- Built-in online check of services (checked only at time of page load/refresh, to minimize background activity/load)
-- Several built-in Themes (easy to edit/add your own)
+- Built-in online check of services (checked only at time of page load/refresh, to minimize background activity & load)
+- Several built-in Themes (easy to edit & add your own)
 - Wallpaper backgrounds supported
 - FontAwesome icons
 - All settings in a single easy to edit json file, **with built-in editor**
@@ -131,13 +131,12 @@ Sample:
 ``` 
 
 ## Alternate Configurations
-Dasherr supports using alternate settings files - This allows having a different theme, a whole different set of sections/services on another Dasherr page without having multiple Dasherr installations.
+Dasherr supports using alternate settings files. This allows having a different theme, a whole different set of sections/services on another Dasherr page without having multiple Dasherr installations.
 This file could group a different set of services (a self-hosted cloud instance, for example) or another home server etc.
 
 Usage:
 Put the alternate settings file in Dasherr's root folder and put its name in `s` url parameter.
-An example is included in the download, named `settings.sh.json`. Dasherr can be switched to use that instead, like so:
-`index.php?s=settings.sh.json`
+See `settings.sample.json` for usage example, it loads `settings.sh.json` via `index.php?s=settings.sh.json`
 
 ## Credits
 - **Flame** : Very well made and clean looking static dashboard. I took the theme names and color swatches from Flame because they looked gorgeous to me, and for that I'm very grateful
