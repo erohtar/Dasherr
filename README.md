@@ -135,7 +135,8 @@ Dasherr supports using alternate settings files. This allows having a different 
 This file could group a different set of services (a self-hosted cloud instance, for example) or another home server etc.
 
 Usage:
-Put the alternate settings file in Dasherr's root folder and put its name in `s` url parameter.
+- Put the alternate settings file in Dasherr's root folder and put its name in `s` url parameter.
+
 See `settings.sample.json` for usage example, it loads `settings.sh.json` via `index.php?s=settings.sh.json`
 
 ## Credits
