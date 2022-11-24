@@ -1,16 +1,6 @@
-//globals
+//define global vars
 
-//support for alt settings file (default being settings.json)
-const urlParams = new URLSearchParams(window.location.search);
-let settingsFile = urlParams.get('s')
-
-if (!settingsFile)
-	settingsFile = 'settings.json';
-
-const gSettings = JSON.parse(fileReader(settingsFile));
-const currTheme = gSettings.themes[gSettings.page.theme];
 let enableTooltips = false;
-
 
 window.onload = function() {
 	//show page contents at this point
@@ -71,19 +61,6 @@ window.onload = function() {
 		const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
 	}
 };
-
-//to read settings file
-function fileReader(pathOfFileToReadFrom)
-{
-	let request = new XMLHttpRequest();
-	request.open('GET', pathOfFileToReadFrom, false);
-	request.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
-	request.setRequestHeader('Access-Control-Allow-Origin', '*');
-	request.send(null);
-	let returnValue = request.responseText;
-
-	return returnValue;
-}
 
 
 //widget refresh functions

@@ -21,6 +21,8 @@
 	<script src="include/bootstrap.bundle.min.js"></script>
 	<script src="include/jquery.min.js"></script>
 	
+	<!-- theming.js and preload.js need to be loaded before worker.js -->
+	<script src="include/preload.js"></script>
 	<script src="include/theming.js"></script>
 	<script src="include/worker.js"></script>
 	
@@ -29,7 +31,7 @@
 	<!-- Window Contents -->
 	<div class="container col-lg-12 col-xl-10" style="display:none">
 
-		<a href="editor.php" class="iconButton float-end"><i class="fa-solid fa-wrench"></i></a>
+		<a href="#" onclick="javascript:settingsFile? window.location = 'editor.php?s=' + settingsFile : window.location = 'editor.php';" class="iconButton float-end"><i class="fa-solid fa-wrench"></i></a>
 		
 		<!-- Dashboard Contents -->
 		<div class="row">

@@ -14,8 +14,10 @@
 	<link href="include/custom.css" rel="stylesheet">
 	<link rel="icon" href="res/favicon.svg" sizes="32x32" type="image/png">
 
+	<script src="include/preload.js"></script>
 	<script src="include/theming.js"></script>
-    <script src="include/bootstrap.bundle.min.js"></script>
+
+	<script src="include/bootstrap.bundle.min.js"></script>
 	<script src="include/jquery.min.js"></script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     
@@ -26,7 +28,7 @@
 	<div class="container col-lg-12 col-xl-10">
 
 		<!-- Container Contents -->
-		<a href="index.php" class="iconButton float-end"><i class="fa-solid fa-server"></i></a>
+		<a href="#" onclick="javascript:settingsFile? window.location = 'index.php?s=' + settingsFile : window.location = 'index.php';" class="iconButton float-end"><i class="fa-solid fa-server"></i></a>
 		
 		<a href="https://github.com/erohtar/Dasherr/" target="_blank" class="iconButton float-end"><i class="fa-brands fa-github"></i></a>
 		
