@@ -45,7 +45,7 @@ Sample:
 
 ### Widgets
 Configurable settings:
-- `disable` - (Optional) If set to `1`, the whole widgets area will not be shown
+- `disable` - (Optional) If set to `1`, no widgets will be loaded
 
 #### Glances
 There's only one widget currently supported - Glances. That's not because of my laziness (even though I don't deny that trait), but to keep with the minimal design and stay light on resources.
