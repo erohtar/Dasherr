@@ -17,6 +17,7 @@
 			"name": "Resources",
 			"tiles": [
 				{
+					"disableCheck": 1,
 					"openTab": "same",
 					"name": "Self-Hosting",
 					"url": "?s=settings.sh.json",
