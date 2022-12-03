@@ -30,8 +30,6 @@
 		<!-- Container Contents -->
 		<a href="#" onclick="javascript:settingsFile? window.location = 'index.php?s=' + settingsFile : window.location = 'index.php';" class="iconButton float-end"><i class="fa-solid fa-server"></i></a>
 		
-		<a href="https://github.com/erohtar/Dasherr/" target="_blank" class="iconButton float-end"><i class="fa-brands fa-github"></i></a>
-		
 		<div class="row">
 			<h2 id="pageTitle">Dasherr Settings</h2>
 			<hr>

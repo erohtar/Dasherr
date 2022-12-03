@@ -33,34 +33,20 @@
 
 		<a href="#" onclick="javascript:settingsFile? window.location = 'editor.php?s=' + settingsFile : window.location = 'editor.php';" class="iconButton float-end"><i class="fa-solid fa-wrench"></i></a>
 		
+		<a href="https://github.com/erohtar/Dasherr/" target="_blank" class="iconButton float-end"><i class="fa-brands fa-github"></i></a>
+		
 		<!-- Dashboard Contents -->
 		<div class="row">
 			<h2 id="pageTitle"></h2>
 			<hr>
 		</div>
 		
-		
 		<!-- Widgets here -->
-		<div id="areaWidgets" class="row mb-5" style="display:none">
-			<div class="row-cols-3 row-cols-sm-4 row-cols-md-6 row-cols-lg-10 row-cols-xl-12 gy-3">
-				<div id="widgetGlances" class="widget text-end" style="display:none">
-					<div class="row">
-						<span class="col-2"><i class="fa fa-temperature-low"></i></span>
-						<span class="col-7" id="cpuTemp"></span>
-					</div>
-					<div class="row">
-						<span class="col-2"><i class="fa fa-microchip"></i></span>
-						<span class="col-7" id="cpuPrct"></span>
-					</div>
-					<div class="row">
-						<span class="col-2"><i class="fa fa-memory"></i></span>
-						<span class="col-7" id="memPrct"></span>
-					</div>
-				</div>
-			</div>
+		<div id="areaWidgets" class="row row-cols-3 row-cols-sm-4 row-cols-md-6 row-cols-lg-10 row-cols-xl-12 gy-5" style="display:none">
 		</div>
 	
-		
+		<br>
+
 		<!-- Section/Tiles get added here -->
 		<div id="areaSections" class="row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 gy-5">
 		</div>

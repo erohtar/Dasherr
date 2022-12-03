@@ -10,16 +10,23 @@ window.onload = function() {
 	document.title = gSettings.page.title;
 	document.getElementById('pageTitle').innerHTML = gSettings.page.title;
 	
-	//show widgets area if not all widgets disabled
-	if(!gSettings.widgets.disable) {
-		document.getElementById('areaWidgets').style = 'display:block;';
-		
-		//load glances widget if not disabled
-		if(!gSettings.widgets.glances.disable) {
-			document.getElementById('widgetGlances').style = 'display:block;';
-			glances();
-			//setup widget auto-refresh
-			setInterval(glances, gSettings.widgets.glances.refreshMs);
+	//create widgets
+	if (gSettings.widgets.length > 0)
+	{
+		document.getElementById('areaWidgets').style = 'display:flex;';
+	
+		for (let n1 = 0; n1 < gSettings.widgets.length; n1++) {
+			if (gSettings.widgets[n1].disable) {
+				//allows quickly disabling a widget
+				continue;
+			}
+			
+			//glances
+			if(gSettings.widgets[n1].type === "glances") {
+				createWidgetGlances(n1);
+				setInterval(refreshWidgetGlances, gSettings.widgets[n1].settings.refreshMs, n1);
+				refreshWidgetGlances(n1);
+			}
 		}
 	}
 	
@@ -56,24 +63,11 @@ window.onload = function() {
 	}
 	
 	//enable tooltips only if used anywhere
-	if (enableTooltips === true)	{
+	if (enableTooltips === true) {
 		const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
 		const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
 	}
 };
-
-
-//widget refresh functions
-function glances() {
-	$.getJSON({url: gSettings.widgets.glances.url + 'api/3/quicklook'}).done(function (result, status, xhr) {
-		document.getElementById('cpuPrct').innerText = result.cpu + '%'
-		document.getElementById('memPrct').innerText = result.mem + '%'
-	});
-	
-	$.getJSON({url: gSettings.widgets.glances.url + 'api/3/sensors'}).done(function (result, status, xhr) {
-		document.getElementById('cpuTemp').innerText = result[0].value + 'C'
-	});
-}
 
 
 function createSections() {
@@ -186,3 +180,53 @@ async function checkOnline(thisUrl, thisId) {
 		//console.log(thisUrl + ' : ' + response.status);
 	}
 }
+
+//widget create functions
+function createWidgetGlances(nW) {
+	let hostDiv = document.getElementById('areaWidgets');
+	
+	let wgtDiv = document.createElement('div');
+	
+	wgtDiv.classList.add('col');
+	wgtDiv.classList.add('col-sm-6');
+
+	//add tooltip to widget
+	if (gSettings.widgets[nW].info) {
+		enableTooltips = true;
+		wgtDiv.setAttribute("data-bs-toggle", "tooltip");
+		wgtDiv.setAttribute("data-bs-placement", "bottom");
+		wgtDiv.setAttribute("data-bs-title", gSettings.widgets[nW].info);
+	}
+	
+	//add widget's name and hr under it only if name is specified
+	wgtDiv.innerHTML = (gSettings.widgets[nW].name ? '<h7>' + gSettings.widgets[nW].name + '</h7><hr>' : '')
+		+ '		<div class="widget widgetGlances text-end">'
+		+ '			<div class="row">'
+		+ '				<span class="col-2"><i class="fa fa-temperature-low"></i></span>'
+		+ '				<span class="col-7" id="cpuTemp' + nW + '"></span>'
+		+ '			</div>'
+		+ '			<div class="row">'
+		+ '				<span class="col-2"><i class="fa fa-microchip"></i></span>'
+		+ '				<span class="col-7" id="cpuPrct' + nW + '"></span>'
+		+ '			</div>'
+		+ '			<div class="row">'
+		+ '				<span class="col-2"><i class="fa fa-memory"></i></span>'
+		+ '				<span class="col-7" id="memPrct' + nW + '"></span>'
+		+ '			</div>'
+		+ '		</div>'
+	
+	hostDiv.appendChild(wgtDiv);
+}
+
+//widget refresh functions
+function refreshWidgetGlances(nW) {
+	$.getJSON({url: gSettings.widgets[nW].settings.url + 'api/3/quicklook'}).done(function (result, status, xhr) {
+		document.getElementById('cpuPrct' + nW).innerText = result.cpu + '%'
+		document.getElementById('memPrct' + nW).innerText = result.mem + '%'
+	});
+	
+	$.getJSON({url: gSettings.widgets[nW].settings.url + 'api/3/sensors'}).done(function (result, status, xhr) {
+		document.getElementById('cpuTemp' + nW).innerText = (result.length > 0? result[0].value + 'C' : '-')
+	});
+}
+

@@ -4,20 +4,15 @@
 		"theme": "Chalk",
 		"openTab": "new"
 	},
-	"widgets": {
-		"disable": 1,
-		"glances": {
-			"disable": 1,
-			"url": "http://homeserver:61208/",
-			"refreshMs": 5000
-		}
-	},
+	"widgets": [
+	],
 	"sections": [
 		{
 			"name": "Containers",
 			"tiles": [
 				{
 					"name": "DockerHub",
+					"info": "Docker Hub is the world's easiest way to create, manage, and deliver your team's container applications",
 					"url": "https://hub.docker.com/",
 					"faIcon": "fa-brands fa-docker"
 				},

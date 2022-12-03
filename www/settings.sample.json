@@ -4,14 +4,17 @@
 		"theme": "Onedark",
 		"openTab": "new"
 	},
-	"widgets": {
-		"disable": 0,
-		"glances": {
+	"widgets": [
+		{
 			"disable": 0,
-			"url": "http://homeserver:61208/",
-			"refreshMs": 5000
+			"name": "Server",
+			"type": "glances",
+			"settings": {
+				"url": "http://homeserver:61208/",
+				"refreshMs": 5000
+			}
 		}
-	},
+	],
 	"sections": [
 		{
 			"name": "Resources",

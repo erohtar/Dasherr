@@ -44,25 +44,32 @@ Sample:
 ```
 
 ### Widgets
-Configurable settings:
-- `disable` - (Optional) If set to `1`, no widgets will be loaded
+This is an array of any number of widgets on your dashboard (single or multiple instances of each)
 
 #### Glances
-There's only one widget currently supported - Glances. That's not because of my laziness (even though I don't deny that trait), but to keep with the minimal design and stay light on resources.
+To keep with the minimal design and stay light on resources, there's only one type of widget currently supported - Glances.
 
 Configurable settings:
-- `url` - Service URL
-- `refreshMs` - How many ms to wait before updating (default is 5000ms or 5 seconds)
+- `name` - (Optional) If set, it'll show a title for this widget
+- `type` - `glances`
 - `disable` - (Optional) If set to `1`, this widget will not be loaded
+- `info` - (Optional) Any description you'd like to add for this Widget - shows as a tooltip on mouse-hover
+- `settings > url` - Service URL
+- `settings > refreshMs` - How many ms to wait before updating (default is 5000ms or 5 seconds)
 
 Sample:
 ```
-"widgets": {
-	"glances": {
-		"url": "http://homeserver:61208/",
-		"refreshMs": 5000
+"widgets": [
+	{
+		"name": "Stats",
+		"type": "glances",
+		"disable": 0,
+		"settings": {
+			"url": "http://homeserver:61208/",
+			"refreshMs": 5000
+		}
 	}
-}
+]
 ```
 
 ### Sections
