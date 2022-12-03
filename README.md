@@ -1,5 +1,5 @@
-![image](https://user-images.githubusercontent.com/5120628/201703719-1b569500-9953-434f-ba27-79d1ef1c82da.png)
-![image](https://user-images.githubusercontent.com/5120628/201706631-527a7bcb-bc0e-4cb5-a4aa-f872587d78ff.png)
+![image](https://user-images.githubusercontent.com/5120628/205450027-ef0c4cf9-25ae-4ef4-a7f1-09e74ffb6156.png)
+![image](https://user-images.githubusercontent.com/5120628/205450084-1fe26f24-093d-43c5-aacf-b38bf012ab1c.png)
 
 # Dasherr
 A minimal and lightweight dashboard for your self-hosted services (and bookmarks)
@@ -9,10 +9,10 @@ A minimal and lightweight dashboard for your self-hosted services (and bookmarks
 - Responsive design (uses Bootstrap framework)
 - Shows Temperature, CPU load and Memory used by tapping into Glances API (default 5s updates)
 - Built-in online check of services (checked only at time of page load/refresh, to minimize background activity & load)
-- Several built-in Themes (easy to edit & add your own)
+- Several built-in **Themes** (easy to edit & add your own)
 - Wallpaper backgrounds supported
 - FontAwesome icons
-- All settings in a single easy to edit json file, **with built-in editor**
+- All settings in a single easy to edit json file, with **built-in editor**
 - Support for alternate configurations without needing multiple Dasherr installations
 
 ## Installation
@@ -47,7 +47,7 @@ Sample:
 This is an array of any number of widgets on your dashboard (single or multiple instances of each)
 
 #### Glances
-To keep with the minimal design and stay light on resources, there's only one type of widget currently supported - Glances.
+To keep with the minimalist theme and stay light on resources, there's only one type of widget currently supported - Glances.
 
 Configurable settings:
 - `name` - (Optional) If set, it'll show a title for this widget
