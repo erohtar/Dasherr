@@ -13,13 +13,12 @@ window.onload = function() {
 	//create widgets
 	if (gSettings.widgets.length > 0)
 	{
-		document.getElementById('areaWidgets').style = 'display:flex;';
-	
 		for (let n1 = 0; n1 < gSettings.widgets.length; n1++) {
 			if (gSettings.widgets[n1].disable) {
 				//allows quickly disabling a widget
 				continue;
 			}
+			document.getElementById('areaWidgets').style = 'display:flex;';
 			
 			//glances
 			if(gSettings.widgets[n1].type === "glances") {
