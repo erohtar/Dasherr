@@ -54,7 +54,7 @@ Configurable settings:
 - `type` - `glances`
 - `disable` - (Optional) If set to `1`, this widget will not be loaded
 - `info` - (Optional) Any description you'd like to add for this Widget - shows as a tooltip on mouse-hover
-- `settings > url` - Service URL
+- `settings > url` - Service URL (including trailing slash `/`)
 - `settings > refreshMs` - How many ms to wait before updating (default is 5000ms or 5 seconds)
 
 Sample:
@@ -87,7 +87,7 @@ This is an array of any number of individual Tiles (services) in a section.
 Configurable settings:
 - `name` - Self-explanatory
 - `info` - (Optional) Any description you'd like to add for this Tile - shows as a tooltip on mouse-hover
-- `url` - Service URL
+- `url` - Service URL (including trailing slash `/`)
 - `faIcon` - The id of the FontAwesome icon you'd like to show for this service
 - `disable` - (Optional) If set to `1`, this Tile will not be shown
 - `disableCheck` - (Optional) If set to `1`, the online check will not be performed for this Tile
