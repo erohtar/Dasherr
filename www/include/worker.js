@@ -218,7 +218,7 @@ function createWidgetGlances(nW) {
 }
 
 //widget refresh functions
-function refreshWidgetGlances0(nW) {
+function refreshWidgetGlances(nW) {
 	$.getJSON({url: gSettings.widgets[nW].settings.url + 'api/3/quicklook'}).done(function (result, status, xhr) {
 		document.getElementById('cpuPrct' + nW).innerText = result.cpu + '%'
 		document.getElementById('memPrct' + nW).innerText = result.mem + '%'
@@ -227,43 +227,4 @@ function refreshWidgetGlances0(nW) {
 	$.getJSON({url: gSettings.widgets[nW].settings.url + 'api/3/sensors'}).done(function (result, status, xhr) {
 		document.getElementById('cpuTemp' + nW).innerText = (result.length > 0? result[0].value + 'C' : '-')
 	});
-}
-
-async function refreshWidgetGlances1(nW) {
-	const options = {
-		method: 'GET',
-		mode: 'no-cors'
-	};
-
-	const response = await fetch(gSettings.widgets[nW].settings.url + 'api/3/quicklook',options);
-	if (response.status = 200) {
-		console.log(response.body);
-	} else {
-		//console.log(thisUrl + ' : ' + response.status);
-	}
-      let result = await response.json();
-      console.log(result);
-}
-
-function refreshWidgetGlances(nW) {
-	const options = {
-		method: 'GET',
-		mode: 'no-cors'
-	};
-   
-	fetch(gSettings.widgets[nW].settings.url + 'api/3/quicklook', options)
-   .then(response => {
-       if (!response.ok) {
-           throw new Error("HTTP error " + response.status);
-       }
-       return response.json();
-   })
-   .then(result => {
-		document.getElementById('cpuPrct' + nW).innerText = result.cpu + '%';
-		document.getElementById('memPrct' + nW).innerText = result.mem + '%';
-       //console.log(this.users);
-   })
-   .catch(function () {
-       this.dataError = true;
-   })
 }
