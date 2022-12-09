@@ -7,7 +7,6 @@
 	"widgets": [
 		{
 			"disable": 0,
-			"name": "Server",
 			"type": "glances",
 			"settings": {
 				"url": "http://homeserver:61208/",
@@ -16,18 +15,6 @@
 		}
 	],
 	"sections": [
-		{
-			"name": "Resources",
-			"tiles": [
-				{
-					"disableCheck": 1,
-					"openTab": "same",
-					"name": "Self-Hosting",
-					"url": "?s=settings.sh.json",
-					"faIcon": "fa-regular fa-hard-drive"
-				}
-			]
-		},
 		{
 			"name": "Monitor",
 			"info": "Server monitoring services",
@@ -98,6 +85,18 @@
 					"name": "Sonarr",
 					"url": "http://homeserver:8989/",
 					"faIcon": "fa fa-tv"
+				}
+			]
+		},
+		{
+			"name": "Resources",
+			"tiles": [
+				{
+					"disableCheck": 1,
+					"openTab": "same",
+					"name": "Self-Hosting",
+					"url": "?s=settings.sh.json",
+					"faIcon": "fa-regular fa-hard-drive"
 				}
 			]
 		}
