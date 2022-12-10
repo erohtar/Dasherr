@@ -102,6 +102,7 @@ function createSections() {
 			
 		secDiv.appendChild(secTitle);
 		
+		//create tiles
 		for (let n2 = 0; n2 < gSettings.sections[n1].tiles.length; n2++) {
     		if (gSettings.sections[n1].tiles[n2].disable) {
     			//allows quickly disabling a tile
@@ -153,6 +154,7 @@ function createSections() {
 				let tileIcon = document.createElement('i');
 				tileIcon.id = 'icon' + thisSec + thisTile;
 				tileIcon.className = gSettings.sections[n1].tiles[n2].faIcon;
+				tileIcon.classList.add('fa-fw');
 				tileIcon.style = 'margin-right: 5px;';
 				
 				tileLink.appendChild(tileIcon);
