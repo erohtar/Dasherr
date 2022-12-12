@@ -168,8 +168,10 @@ async function checkOnline(thisUrl, thisId) {
 	//reads all tiles from settings and sets their respective indicators to green
 	const options = {
 		method: 'GET',
-		mode: 'no-cors'
+		mode: 'no-cors',
+		connection: 'close'
 	};
+
 
 	const response = await fetch(thisUrl,options);
 	if (response.status = 200) {
