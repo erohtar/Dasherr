@@ -52,10 +52,10 @@ To keep with the minimalist theme and stay light on resources, there's only one 
 Configurable settings:
 - `name` - (Optional) If set, it'll show a title for this widget
 - `type` - `glances`
-- `disable` - (Optional) If set to `1`, this widget will not be loaded
-- `info` - (Optional) Any description you'd like to add for this Widget - shows as a tooltip on mouse-hover
 - `settings > url` - Service URL (including trailing slash `/`)
 - `settings > refreshMs` - How many ms to wait before updating (default is 5000ms or 5 seconds)
+- `disable` - (Optional) If set to `1`, this widget will not be loaded
+- `info` - (Optional) Any description you'd like to add for this Widget - shows as a tooltip on mouse-hover
 
 Sample:
 ```
@@ -77,8 +77,8 @@ This is an array of any number of individual Sections in your dashboard.
 
 Configurable settings:
 - `name` - Self-explanatory
-- `info` - (Optional) Any description you'd like to add for this Section - shows as a tooltip on mouse-hover
 - `tiles` - See below
+- `info` - (Optional) Any description you'd like to add for this Section - shows as a tooltip on mouse-hover
 - `disable` - (Optional) If set to `1`, this Section will not be shown
 
 ### Tiles
@@ -86,9 +86,9 @@ This is an array of any number of individual Tiles (services) in a section.
 
 Configurable settings:
 - `name` - Self-explanatory
-- `info` - (Optional) Any description you'd like to add for this Tile - shows as a tooltip on mouse-hover
 - `url` - Service URL (including trailing slash `/`)
 - `faIcon` - The id of the FontAwesome icon you'd like to show for this service
+- `info` - (Optional) Any description you'd like to add for this Tile - shows as a tooltip on mouse-hover
 - `disable` - (Optional) If set to `1`, this Tile will not be shown
 - `disableCheck` - (Optional) If set to `1`, the online check will not be performed for this Tile
 - `openTab` - (Optional - Overrides page's `openTab` setting) When you click on this tile, this setting determines whether it's opened in a new tab or the same tab (possible values `new` or `same`)
