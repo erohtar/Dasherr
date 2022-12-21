@@ -119,7 +119,7 @@ Dasherr comes with several built-in themes, and you can easily add your own by c
 
 Configurable settings:
 - `background` - This could be a local or web wallpaper background
-- `colorBg` - This is the background color of the page (only used if `background` is not set)
+- `colorBg` - This is the background color of the page (only matters if `background` is not set)
 - `colorPr` - This is the primary text color of the page
 - `colorSc` - This is the secondary text color of the page
 - `colorOn` - This is the color of the service **enabled** 'dot'
