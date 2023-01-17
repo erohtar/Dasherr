@@ -14,6 +14,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	
 	<link href="include/bootstrap.min.css" rel="stylesheet">
+
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
 	<link href="include/custom.css" rel="stylesheet">
 	<link rel="icon" href="res/favicon.svg" sizes="32x32" type="image/png">
@@ -30,24 +31,25 @@
   <body>
 	<!-- Window Contents -->
 	<div class="container col-lg-12 col-xl-10" style="display:none">
+		<!-- Dashboard Contents -->
 
+		<!-- Top right icons -->
 		<a href="#" onclick="javascript:settingsFile? window.location = 'editor.php?s=' + settingsFile : window.location = 'editor.php';" class="iconButton float-end"><i class="fa-solid fa-wrench"></i></a>
-		
 		<a href="https://github.com/erohtar/Dasherr/" target="_blank" class="iconButton float-end"><i class="fa-brands fa-github"></i></a>
 		
-		<!-- Dashboard Contents -->
+		<!-- Dashboard Title -->
 		<div class="row">
 			<h2 id="pageTitle"></h2>
 			<hr>
 		</div>
 		
-		<!-- Widgets here -->
+		<!-- Widgets get added here -->
 		<div id="areaWidgets" class="row row-cols-3 row-cols-sm-4 row-cols-md-6 row-cols-lg-10 row-cols-xl-12 gy-5" style="display:none">
 		</div>
 	
 		<br>
 
-		<!-- Section/Tiles get added here -->
+		<!-- Sections/Tiles get added here -->
 		<div id="areaSections" class="row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 gy-5">
 		</div>
 			

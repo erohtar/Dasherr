@@ -25,6 +25,7 @@
   </head>
   <body>
 	<!-- Window Contents -->
+	
 	<div class="container col-lg-12 col-xl-10">
 
 		<!-- Container Contents -->
@@ -41,8 +42,10 @@
 		<!-- End Container Contents -->
 	</div>
 
+	<!-- editor.js needs to be loaded at the end -->
+	<script src="include/editor.js"></script>
+
 
 	<!-- End Window Contents -->
-	<script src="include/editor.js"></script>
-  </body>
+	</body>
 </html>

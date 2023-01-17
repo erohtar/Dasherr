@@ -158,7 +158,18 @@ function createSections() {
 				tileIcon.style = 'margin-right: 5px;';
 				
 				tileLink.appendChild(tileIcon);
+			} else if (gSettings.sections[n1].tiles[n2].icon) {
+				let tileIcon = document.createElement('img');
+				tileIcon.id = 'iconImg' + thisSec + thisTile;
+				tileIcon.src = gSettings.sections[n1].tiles[n2].icon;
+				tileIcon.width = 20;
+				tileIcon.className = gSettings.sections[n1].tiles[n2].icon;
+				//tileIcon.classList.add('fa-fw');
+				tileIcon.style = 'margin-right: 5px;';
+				
+				tileLink.appendChild(tileIcon);
 			}
+
 			tileLink.innerHTML = tileLink.innerHTML + thisTile;
 		}
 	}

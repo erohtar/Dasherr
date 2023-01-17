@@ -11,7 +11,7 @@ A minimal and lightweight dashboard for your self-hosted services (and bookmarks
 - Built-in online check of services (checked only at time of page load/refresh, to minimize background activity & load)
 - Several built-in **Themes** (easy to edit & add your own)
 - Wallpaper backgrounds supported
-- FontAwesome icons
+- FontAwesome icons (also supports Self-hosted/Web image icons)
 - All settings in a single easy to edit json file, with **built-in editor**
 - Support for alternate configurations without needing multiple Dasherr installations
 
@@ -87,7 +87,8 @@ This is an array of any number of individual Tiles (services) in a section.
 Configurable settings:
 - `name` - Self-explanatory
 - `url` - Service URL (including trailing slash `/`)
-- `faIcon` - The id of the FontAwesome icon you'd like to show for this service
+- `faIcon` - (Optional) The id of the FontAwesome icon you'd like to show for this service
+- `icon` - (Optional) The url/path of the custom icon image you'd like to show for this service
 - `info` - (Optional) Any description you'd like to add for this Tile - shows as a tooltip on mouse-hover
 - `disable` - (Optional) If set to `1`, this Tile will not be shown
 - `disableCheck` - (Optional) If set to `1`, the online check will not be performed for this Tile
