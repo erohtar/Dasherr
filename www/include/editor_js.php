@@ -1,3 +1,5 @@
+<?php
+echo "<script type = 'text/javascript'>
 //globals
 
 //load file
@@ -12,8 +14,8 @@ function readSettingsJson() {
 			return JSON.parse(fileReader(settingsFile));
 		else
 			return JSON.parse(fileReader('settings.json'));
-	} catch (ex) {
-		alert('Wrong JSON Format: ' + ex);
+	} catch (e) {
+		alert('Wrong JSON Format: ' + e);
 	}
 }
 
@@ -22,8 +24,8 @@ $('#saveFile').on('click', function () {
 	
 	var data = new FormData();
 	//for the php file, settings.json is in parent folder
-	data.append("file" , '../settings.json');
-	data.append("data" , fileData);
+	data.append('file' , '../settings.json');
+	data.append('data' , fileData);
 	var xhr = new XMLHttpRequest();
 	xhr.open( 'POST', 'include/filesave.php', false );
 	xhr.send(data);
@@ -32,3 +34,5 @@ $('#saveFile').on('click', function () {
 		window.location.href = 'index.php';
 	}, 1000);
 });
+</script>";
+;?>

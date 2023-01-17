@@ -43,8 +43,7 @@
 	</div>
 
 	<!-- editor.js needs to be loaded at the end -->
-	<script src="include/editor.js"></script>
-
+	<?php include 'include/editor_js.php';?>
 
 	<!-- End Window Contents -->
 	</body>
