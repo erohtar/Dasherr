@@ -1,5 +1,6 @@
 <?php
 echo "<script type = 'text/javascript'>
+
 //globals
 
 //load file
@@ -34,5 +35,6 @@ $('#saveFile').on('click', function () {
 		window.location.href = 'index.php';
 	}, 1000);
 });
+
 </script>";
 ;?>
