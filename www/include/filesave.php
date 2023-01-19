@@ -3,7 +3,7 @@ if(!empty($_POST['data'])){
 	$fname = $_POST['file'];
 
 	//check if file name ends with .json
-	if(substr($fname, -1, 5) != '.json') {
+	if(substr($fname, -5) != '.json') {
 		echo '<script>alert("ERROR: Incorrect file type submitted")</script>';
 		return;
 	}
