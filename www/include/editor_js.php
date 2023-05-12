@@ -20,19 +20,21 @@ function readSettingsJson() {
 	}
 }
 
-$('#saveFile').on('click', function () {
-	let fileData = JSON.stringify(editor.get(readSettingsJson()), null, '\t');
-	
+function updateSettingsJson(fileData) {
 	var data = new FormData();
 	data.append('data' , fileData);
 	var xhr = new XMLHttpRequest();
 	xhr.open( 'POST', 'include/save_settings.php', false );
 	xhr.send(data);
-	
-	setTimeout(() => {
-		window.location.href = 'index.php';
-	}, 1000);
+	window.location.href = 'index.php';
+}
+
+$('#saveFile').on('click', function () {
+	updateSettingsJson(JSON.stringify(editor.get(readSettingsJson()), null, '\t'));
 });
+$('#resetFile').on('click', () => {
+	updateSettingsJson(fileReader('settings.sample.json'));
+})
 
 </script>";
 ;?>

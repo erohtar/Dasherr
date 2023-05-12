@@ -31,12 +31,13 @@
 		<!-- Container Contents -->
 		<a href="#" onclick="javascript:settingsFile? window.location = 'index.php?s=' + settingsFile : window.location = 'index.php';" class="iconButton float-end"><i class="fa-solid fa-server"></i></a>
 		
-		<div class="row">
+		<div class="row mb-2">
 			<h2 id="pageTitle">Dasherr Settings</h2>
 			<hr>
+			<a href="#" class="iconButton"><i id="saveFile" class="fa-solid fa-floppy-disk"></i></a>
+			<a href="#" class="iconButton"><i id="resetFile" class="fa-solid fa-trash"></i></a>
 		</div>
-		
-		<a href="#" class="iconButton"><i id="saveFile" class="fa-solid fa-floppy-disk"></i></a>
+
 		<pre id="json-display"></pre>
 
 		<!-- End Container Contents -->
