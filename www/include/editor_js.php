@@ -33,7 +33,9 @@ $('#saveFile').on('click', function () {
 	updateSettingsJson(JSON.stringify(editor.get(readSettingsJson()), null, '\t'));
 });
 $('#resetFile').on('click', () => {
-	updateSettingsJson(fileReader('settings.sample.json'));
+	if (confirm('This will reset your settings.json to default. Confirm action?')) {
+		updateSettingsJson(fileReader('settings.sample.json'));
+	}
 })
 
 </script>";
