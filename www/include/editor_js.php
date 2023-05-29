@@ -25,7 +25,7 @@ $('#saveFile').on('click', function () {
 	
 	var data = new FormData();
 	//for the php file, settings.json is in parent folder
-	data.append('file' , '../settings.json');
+	data.append('file' , settingsFile? '../' + settingsFile : '../settings.json');
 	data.append('data' , fileData);
 	var xhr = new XMLHttpRequest();
 	xhr.open( 'POST', 'include/filesave.php', false );

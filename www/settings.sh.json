@@ -4,8 +4,7 @@
 		"theme": "Chalk",
 		"openTab": "new"
 	},
-	"widgets": [
-	],
+	"widgets": [],
 	"sections": [
 		{
 			"name": "Containers",
