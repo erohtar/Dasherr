@@ -1,8 +1,8 @@
 //support for alt settings file (default being settings.json)
 const urlParams = new URLSearchParams(window.location.search);
-let settingsFile = urlParams.get('s');
+let settingsFile = urlParams.get('s') || 'settings.json';
 
-const gSettings = settingsFile ? JSON.parse(fileReader(settingsFile)) : JSON.parse(fileReader('settings.json'));
+const gSettings = JSON.parse(fileReader(settingsFile));
 
 const currTheme = gSettings.themes[gSettings.page.theme];
 

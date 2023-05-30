@@ -11,30 +11,30 @@ applyTheme();
 
 function readSettingsJson() {
 	try {
-		if (settingsFile)
-			return JSON.parse(fileReader(settingsFile));
-		else
-			return JSON.parse(fileReader('settings.json'));
+		return JSON.parse(fileReader(settingsFile));
 	} catch (e) {
 		alert('Wrong JSON Format: ' + e);
 	}
 }
 
-$('#saveFile').on('click', function () {
-	let fileData = JSON.stringify(editor.get(readSettingsJson()), null, '\t');
-	
+function updateSettingsJson(fileData) {
 	var data = new FormData();
-	//for the php file, settings.json is in parent folder
-	data.append('file' , '../settings.json');
 	data.append('data' , fileData);
+	data.append('file', settingsFile);
 	var xhr = new XMLHttpRequest();
-	xhr.open( 'POST', 'include/filesave.php', false );
+	xhr.open( 'POST', 'include/save_settings.php', false );
 	xhr.send(data);
-	
-	setTimeout(() => {
-		window.location.href = 'index.php';
-	}, 1000);
+	window.location.href = `/?s=\${settingsFile}`;
+}
+
+$('#saveFile').on('click', function () {
+	updateSettingsJson(JSON.stringify(editor.get(readSettingsJson()), null, '\t'));
 });
+$('#resetFile').on('click', () => {
+	if (confirm(`This will reset your \${settingsFile} to default. Confirm action?`)) {
+		updateSettingsJson(fileReader('settings.sample.json'));
+	}
+})
 
 </script>";
 ;?>
