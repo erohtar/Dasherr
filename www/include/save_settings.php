@@ -9,17 +9,24 @@ function isJson($string) {
 }
 
 // check post data
-if(!empty($_POST['data'])){
+if(!empty($_POST["data"])){
 
 	// validate json
-	$data = $_POST['data'];
+	$data = $_POST["data"];
 	if (!isJson($data)) {
 		echo "<script>alert('ERROR: Invalid JSON data submitted');</script>";
 		return;
 	}
 
-	// write config file
-	$file = fopen("../settings.json", "w");
+	// validate setings path
+	$spath = preg_replace("/[^A-Za-z0-9\-.]/", "", $_POST["file"]);  // strip out special characters (except .)
+	if (!str_ends_with($spath, ".json")) {
+		echo "<script>alert('ERROR: Invalid filename submitted');</script>";
+		return;
+	}
+
+	// write setings file
+	$file = fopen("../$spath", "w");
 	fwrite($file, $data);
 	fclose($file);
 }
