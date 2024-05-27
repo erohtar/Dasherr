@@ -234,12 +234,12 @@ function createWidgetGlances(nW) {
 
 //widget refresh functions
 function refreshWidgetGlances(nW) {
-	$.getJSON({url: gSettings.widgets[nW].settings.url + 'api/3/quicklook'}).done(function (result, status, xhr) {
+	$.getJSON({url: gSettings.widgets[nW].settings.url + 'api/4/quicklook'}).done(function (result, status, xhr) {
 		document.getElementById('cpuPrct' + nW).innerText = result.cpu + '%'
 		document.getElementById('memPrct' + nW).innerText = result.mem + '%'
 	});
 	
-	$.getJSON({url: gSettings.widgets[nW].settings.url + 'api/3/sensors'}).done(function (result, status, xhr) {
+	$.getJSON({url: gSettings.widgets[nW].settings.url + 'api/4/sensors'}).done(function (result, status, xhr) {
 		document.getElementById('cpuTemp' + nW).innerText = (result.length > 0? result[0].value + 'C' : '-')
 	});
 }
