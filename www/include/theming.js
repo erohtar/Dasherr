@@ -10,4 +10,19 @@ function applyTheme() {
 	$('.tile').css("color", currTheme.colorPr);
 	$('.iconButton').css("color", currTheme.colorPr);
 	$('.widget').css("color", currTheme.colorPr);
+
+	let iconObjs = document.querySelectorAll('object[id^="iconObj"]');
+	iconObjs.forEach(function(iconObj) {
+		iconObj.addEventListener('load', function() {
+		let svgDoc = iconObj.contentDocument;
+		if (svgDoc) {
+			let svgElements = svgDoc.querySelectorAll('*');
+			svgElements.forEach(function(element) {
+			if (element.tagName === 'path' || element.tagName === 'circle' || element.tagName === 'rect') {
+				element.setAttribute('fill', currTheme.colorPr);
+			}
+			});
+		}
+		});
+	});
 }
