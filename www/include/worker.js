@@ -169,6 +169,17 @@ function createSections() {
 				
 				tileLink.appendChild(tileIcon);
 			}
+			else if (gSettings.sections[n1].tiles[n2].svg) {
+
+				let tileIcon = document.createElement('object');
+				tileIcon.id = 'iconObj' + thisSec + thisTile;
+				tileIcon.data = gSettings.sections[n1].tiles[n2].svg;
+				tileIcon.width = 15;
+				tileIcon.className = gSettings.sections[n1].tiles[n2].svg;			
+				tileIcon.style = 'margin-right: 5px;';
+				
+				tileLink.appendChild(tileIcon);
+			}
 
 			tileLink.innerHTML = tileLink.innerHTML + thisTile;
 		}
