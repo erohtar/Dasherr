@@ -189,14 +189,14 @@ function createSections() {
 async function checkOnline(thisUrl, thisId) {
 	//reads all tiles from settings and sets their respective indicators to green
 	const options = {
-		method: 'GET',
-		mode: 'no-cors',
-		connection: 'close'
+		method: 'POST',
+		body: new URLSearchParams({
+			url: thisUrl
+		})
 	};
 
-
-	const response = await fetch(thisUrl,options);
-	if (response.status = 200) {
+	const response = await fetch('include/checkOnline.php', options);
+	if (response.ok) {
 		thisId.className = thisId.className.replace(/dot(?!\S)/g, 'dot dot-green');
 		
 		//this theming needs to be done here because js can't change style of future elements of a class
